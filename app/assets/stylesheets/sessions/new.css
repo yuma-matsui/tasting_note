@@ -13,17 +13,10 @@
   width: 200px;
   text-align: center;
   margin: 0 auto;
-  height: 30vh;
-}
-
-.session-main h2 {
-  font-size: 18px;
-  font-weight: bold;
-  color: brown;
-  margin-bottom: 20px;
 }
 
 .field{
+  font-weight: bold;
   margin-bottom: 10px;
   color: brown;
 }

@@ -2,15 +2,14 @@
 <div class="session-top">
 
     <div class="session-main">
-      <%# <h2>ログイン</h2> %>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.label :email %><br />
+          <label>メールアドレス</label>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password %><br />
+          <label>パスワード</label>
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
 
