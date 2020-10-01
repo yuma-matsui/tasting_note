@@ -1,0 +1,65 @@
+.footer-contents{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-lists h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer-lists nav p {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.footer-lists nav h3 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.footer-lists{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-country{
+  display: flex;
+}
+
+.country-end{
+  margin-top: 25px;
+  margin-left: 13px;
+}
+
+.footer-grape{
+  display: flex;
+}
+
+.footer-grape nav p {
+  font-size: 12px;
+}
+
+.footer-white{
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+.footer-logo{
+  margin-top: 8px;
+  height: 60px;
+  width: 75px;
+}
+
+.footer-title{
+  margin-top: 8px;
+  font-weight: bold;
+  size: 18px;
+  color: brown;
+}
