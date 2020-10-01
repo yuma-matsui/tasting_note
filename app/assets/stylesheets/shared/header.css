@@ -1,0 +1,201 @@
+
+.header-contents{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-top{
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo{
+  height: 100px;
+  width: 120px;
+}
+
+.header-title{
+  font-size: 30px;
+  font-weight: bold;
+  color: brown;
+}
+
+.header-menu{
+  display: flex;
+  height: 60px;
+}
+
+.header-left-contents{
+  width: 90%;
+}
+
+
+.left-contents-menu{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.left-contents-menu :hover{
+  border-bottom: 2px solid brown;
+}
+
+.left-contents-link {
+  text-decoration: none;
+  color: black;
+}
+
+
+.left-contents-item{
+  font-size: 17px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.header-right-contents{
+  width: 10%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.user-menu-on{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 8px;
+}
+
+@keyframes fadeleft {
+  from {
+      opacity: 0;
+       transform: translateX(150px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.user-menu-items-on {
+  font-size: 17px;
+  font-weight: bold;
+  animation-name: fadeleft;
+  animation-duration: 0.8s;
+  border-bottom:1px solid brown;
+}
+
+.user-menu-on :hover {
+  border-bottom: none;
+}
+
+.user-menu-none {
+  display: none;
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+  position: relative;
+  width: 40px;
+  height: 34px;
+}
+
+.header-right-contents :hover{
+  cursor: pointer;
+  cursor: hand;
+}
+
+.user-menu-on :hover{
+  cursor: pointer;
+  cursor: hand;
+}
+
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+  top: 15px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+
+.category-bar-none{
+  display: none;
+}
+
+.category-bar{
+  width: 100%;
+  height: 390px;
+  background-color: rgb(252, 240, 240);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border: 1px solid white;
+  animation-name: fadedown;
+  animation-duration: 1s;
+}
+
+@keyframes fadedown {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.category-bar nav {
+  list-style: none;
+}
+
+.wine-grape{
+  display: flex;
+}
+
+.category-bar h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-bar p {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+
+.wine-grape h2{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.white-grape{
+  margin-left: 15px;
+  margin-top: 37px;
+}
