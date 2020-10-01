@@ -35,3 +35,9 @@
   align-items: center;
   justify-content: flex-end;
 }
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+  margin-bottom: 5px;
+}

@@ -1,7 +1,9 @@
 <%= render 'shared/second_header' %>
-<%= render 'shared/error_messages', model: @user %>
+<div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+</div>
 <div class="session-top">
-
     <div class="session-main">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
