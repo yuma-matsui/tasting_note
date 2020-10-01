@@ -1,0 +1,87 @@
+<header class="header-contents">
+  <div class="header-top">
+   <%= image_tag("wine.logo.jpg", class:"header-logo") %>
+   <h1 class="header-title">Tasting Note</h1>
+  </div>
+
+  <div class="header-menu">
+    <div class="header-left-contents" id="header-left-off">
+      <nav class="left-contents-menu">
+        <p class="left-contents-item" id="category-pull">カテゴリ</p>
+        <p class="left-contents-item">
+        詳細検索</p>
+        <p class="left-contents-item">
+        新規投稿</p>
+        <%= link_to "会員登録", new_user_registration_path, class: "left-contents-link left-contents-item" %>
+        <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>
+      </nav>
+    </div>
+
+    <div class="header-right-contents" id="header-right-on">
+      <a class="menu-trigger" id="user-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <p class="user-menu-none">ログアウト</p>
+      <p class="user-menu-none">お気に入り</p>
+      <p class="user-menu-none">編集</p>
+      <p class="user-menu-none">マイノート</p>
+      <p class="user-menu-none">会員情報</p>
+    </div>
+
+  </div>
+
+  <div class="category-bar-none" id="category-bar-none">
+    <div class="category-bar" id="category-bar-on">
+      <nav class="wine-type">
+        <h1>タイプから探す</h1>
+        <p class="category-item">赤ワイン</p>
+        <p>白ワイン</p>
+        <p>ロゼワイン</p>
+        <p>スパークリングワイン</p>
+        <p>ライトボディ</p>
+        <p>ミディアムボディ</p>
+        <p>フルボディ</p>
+      </nav>
+      <nav class="wine-country">
+        <h1>産地から探す</h1>
+        <p>フランス</p>
+        <p>イタリア</p>
+        <p>スペイン</p>
+        <p>アメリカ</p>
+        <p>チリ</p>
+        <p>オーストラリア</p>
+        <p>ニュージーランド</p>
+        <p>日本</p>
+        <p>南アフリカ</p>
+        <p>その他</p>
+      </nav>
+      <nav class="wine-grape">
+        <nav>
+          <h1>品種から探す</h1>
+          <h2>黒ぶどう</h2>
+          <p>カベルネ・ソーヴィニヨン</p>
+          <p>メルロー</p>
+          <p>ピノノワール</p>
+          <p>シラー</p>
+          <p>マルベック</p>
+          <p>サンジョベーゼ</p>
+          <p>テンプラニーリョ</p>
+          <p>その他</p>
+        </nav>
+        <nav class="white-grape">
+          <h2>白ぶどう</h2>
+          <p>シャルドネ</p>
+          <p>ソーヴィニヨン・ブラン</p>
+          <p>リースリング</p>
+          <p>ビオニエ</p>
+          <p>甲州</p>
+          <p>ゲヴェルツトラミネール</p>
+          <p>ピノグリ</p>
+          <p>その他</p>
+        </nav>
+      </nav>
+    </div>
+  </div>
+</header>
