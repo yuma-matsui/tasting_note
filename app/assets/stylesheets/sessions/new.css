@@ -1,0 +1,44 @@
+.session-top{
+  width: 100%;
+  background-image: url("/images/session.back.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.session-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  height: 30vh;
+}
+
+.session-main h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: brown;
+  margin-bottom: 20px;
+}
+
+.field{
+  margin-bottom: 10px;
+  color: brown;
+}
+
+.log-in-btn{
+  padding: 5px;
+  background-color: brown;
+  color: white;
+  border-radius: 6px;
+}
+
+.session-footer{
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
