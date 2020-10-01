@@ -1,9 +1,8 @@
 <%= render 'shared/second_header' %>
-
+<%= render 'shared/error_messages', model: @user %>
 <div class="session-top">
   <div class="session-main registration-main">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
       <label>お名前</label>
