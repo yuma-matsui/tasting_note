@@ -1,0 +1,2 @@
+class ThirdFlavor < ApplicationRecord
+end

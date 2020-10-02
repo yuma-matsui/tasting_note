@@ -1,0 +1,2 @@
+class FlavorVolume < ApplicationRecord
+end

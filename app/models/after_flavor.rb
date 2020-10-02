@@ -1,0 +1,2 @@
+class AfterFlavor < ApplicationRecord
+end

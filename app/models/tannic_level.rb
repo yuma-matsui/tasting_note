@@ -1,0 +1,2 @@
+class TannicLevel < ApplicationRecord
+end

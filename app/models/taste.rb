@@ -1,0 +1,2 @@
+class Taste < ApplicationRecord
+end

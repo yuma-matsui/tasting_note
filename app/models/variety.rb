@@ -1,0 +1,2 @@
+class Variety < ApplicationRecord
+end

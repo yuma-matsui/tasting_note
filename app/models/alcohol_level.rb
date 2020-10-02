@@ -1,0 +1,2 @@
+class AlcoholLevel < ApplicationRecord
+end

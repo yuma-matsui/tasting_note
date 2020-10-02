@@ -1,0 +1,2 @@
+class Intensity < ApplicationRecord
+end

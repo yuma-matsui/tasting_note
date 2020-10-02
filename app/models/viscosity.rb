@@ -1,0 +1,2 @@
+class Viscosity < ApplicationRecord
+end
