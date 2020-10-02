@@ -1,7 +1,7 @@
 <header class="header-contents">
   <div class="header-top">
-   <%= image_tag("wine.logo.jpg", class:"header-logo") %>
    <h1 class="header-title">Tasting Note</h1>
+    <%= image_tag("top.logo.jpg", class:"header-logo") %>
   </div>
 
   <div class="header-menu">
@@ -12,18 +12,22 @@
         詳細検索</p>
         <p class="left-contents-item">
         新規投稿</p>
-        <%= link_to "会員登録", new_user_registration_path, class: "left-contents-link left-contents-item" %>
-        <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>
+        <% unless user_signed_in? %>
+          <%= link_to "会員登録", new_user_registration_path, class: "left-contents-link left-contents-item" %>
+          <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>
+        <% end %>
       </nav>
     </div>
 
     <div class="header-right-contents" id="header-right-on">
-      <a class="menu-trigger" id="user-menu-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      <p class="user-menu-none">ログアウト</p>
+      <% if user_signed_in? %>
+        <a class="menu-trigger" id="user-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      <% end %>
+      <p class="user-menu-none"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"left-contents-link" %></p>
       <p class="user-menu-none">お気に入り</p>
       <p class="user-menu-none">編集</p>
       <p class="user-menu-none">マイノート</p>

@@ -13,13 +13,14 @@
 }
 
 .header-logo{
-  height: 100px;
-  width: 120px;
+  height: 60px;
+  width: 70px;
 }
 
 .header-title{
   font-size: 30px;
   font-weight: bold;
+  font-style: italic;
   color: brown;
 }
 

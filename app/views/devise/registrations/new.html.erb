@@ -1,29 +1,35 @@
-<h2>Sign up</h2>
+<%= render 'shared/second_header' %>
+<%= render 'shared/error_messages', model: @user %>
+<div class="session-top">
+  <div class="session-main registration-main">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <label>お名前</label>
+      <%= f.text_field :name, placeholder: "4文字以上の半角英数字 例:hoge", class:"registration-form" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="field">
+      <label>メールアドレス</label>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例:hoge@hoge.com", class:"registration-form" %>
+    </div>
+
+    <div class="field">
+      <label>パスワード</label>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の半角英数字", class:"registration-form" %>
+    </div>
+
+    <div class="field">
+      <label>確認用パスワード</label>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"registration-form", placeholder:"確認のため同じパスワードをご入力ください" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "会員登録", class:"log-in-btn" %>
+    </div>
+  <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<footer class="session-footer">
+  <h2 class="footer-title">Tasting Note</h2>
+</footer>

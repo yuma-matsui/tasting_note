@@ -1,0 +1,13 @@
+.registration-main{
+  padding: 10px;
+  height: 300px;
+}
+
+.registration-form{
+  font-size: 14px;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px;
+}
+
