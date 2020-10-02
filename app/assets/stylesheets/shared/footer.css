@@ -53,8 +53,8 @@
 
 .footer-logo{
   margin-top: 8px;
-  height: 60px;
-  width: 75px;
+  height: 40px;
+  width: 55px;
 }
 
 .footer-title{
@@ -63,4 +63,9 @@
   font-style: italic;
   size: 18px;
   color: brown;
+}
+
+.footer-main{
+  display: flex;
+  align-items: flex-end;
 }

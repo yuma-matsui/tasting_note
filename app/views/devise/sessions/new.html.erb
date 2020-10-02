@@ -1,27 +1,31 @@
-<%= render 'shared/second_header' %>
+<div class="session-header">
+  <%= render 'shared/second_header' %>
+</div>
 <div class='login-flash-message'>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
 </div>
 <div class="session-top">
-    <div class="session-main">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <label>メールアドレス</label>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+  <div class="session-main">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <label>メールアドレス</label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"registration-form" %>
+      </div>
 
-        <div class="field">
-          <label>パスワード</label>
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+      <div class="field">
+        <label>パスワード</label>
+        <%= f.password_field :password, autocomplete: "current-password", class:"registration-form" %>
+      </div>
 
-        <div class="actions">
-          <%= f.submit "ログイン", class:"log-in-btn" %>
-        </div>
-      <% end %>
-    </div>
+      <div class="actions">
+        <%= f.submit "ログイン", class:"log-in-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<footer class="session-footer">
+<div class="session-footer">
+  <footer class="session-footer">
   <h2 class="footer-title">Tasting Note</h2>
-</footer>
+  </footer>
+</div>

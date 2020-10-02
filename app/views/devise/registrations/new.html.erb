@@ -6,22 +6,22 @@
 
     <div class="field">
       <label>お名前</label>
-      <%= f.text_field :name, placeholder: "例:hoge" %>
+      <%= f.text_field :name, placeholder: "例:hoge", class:"registration-form" %>
     </div>
 
     <div class="field">
       <label>メールアドレス</label>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例:hoge@hoge.com" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例:hoge@hoge.com", class:"registration-form" %>
     </div>
 
     <div class="field">
       <label>パスワード</label>
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の半角英数字" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の半角英数字", class:"registration-form" %>
     </div>
 
     <div class="field">
       <label>確認用パスワード</label>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"registration-form" %>
     </div>
 
     <div class="actions">
