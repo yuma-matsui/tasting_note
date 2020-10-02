@@ -10,7 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_090132) do
+ActiveRecord::Schema.define(version: 2020_10_02_092327) do
+
+  create_table "flavors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "impression_id", null: false
+    t.integer "flavor_volume_id", null: false
+    t.integer "first_flavor_id", null: false
+    t.integer "second_flavor_id"
+    t.integer "third_flavor_id"
+    t.text "comment", null: false
+    t.bigint "wine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wine_id"], name: "index_flavors_on_wine_id"
+  end
+
+  create_table "looks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "color_tone_id", null: false
+    t.integer "intensity_id", null: false
+    t.integer "brightness_id", null: false
+    t.text "comment", null: false
+    t.bigint "wine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "viscosity_id", null: false
+    t.index ["wine_id"], name: "index_looks_on_wine_id"
+  end
+
+  create_table "tastes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "attack_id", null: false
+    t.integer "alcohol_level_id", null: false
+    t.integer "acidity_level_id", null: false
+    t.integer "tannic_level_id", null: false
+    t.integer "after_flavor_id", null: false
+    t.integer "description_id", null: false
+    t.text "comment", null: false
+    t.bigint "wine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wine_id"], name: "index_tastes_on_wine_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,5 +80,8 @@ ActiveRecord::Schema.define(version: 2020_09_30_090132) do
     t.index ["user_id"], name: "index_wines_on_user_id"
   end
 
+  add_foreign_key "flavors", "wines"
+  add_foreign_key "looks", "wines"
+  add_foreign_key "tastes", "wines"
   add_foreign_key "wines", "users"
 end
