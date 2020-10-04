@@ -1,5 +1,5 @@
 class Flavor < ApplicationRecord
-  belongs_to :wine
+  # belongs_to :wine, optional: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :impression
