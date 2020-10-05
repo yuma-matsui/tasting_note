@@ -11,7 +11,6 @@
     <div><%= f.label :third_flavor_id, "第三アロマ" %><span class="dependent">任意</span><br><%= f.collection_select(:third_flavor_id, ThirdFlavor.all, :id, :name, {}, { class:"form-select"}) %></div>
     <div><%= f.label :comment, "香りのフルコメント" %><span class="highlight">必須</span><br><%= f.text_area :comment, class:"form-input form-comment" %></div>
     <div><%= f.submit "味わいの分析へ", class:"form-submit" %></div>
-    <div><%= link_to "戻る", "/", class:"form-submit back-btn" %></div>
     <% end %>
   </div>
 </div>
