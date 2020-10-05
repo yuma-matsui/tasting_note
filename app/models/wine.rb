@@ -1,9 +1,9 @@
 class Wine < ApplicationRecord
   belongs_to :user
-  has_one :look
-  # has_one :flavor
-  # has_one :taste
-  has_one_attached :image
+  has_one :look, dependent: :destroy
+  has_one :flavor, dependent: :destroy
+  has_one :taste, dependent: :destroy
+  has_one_attached :image, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :color
