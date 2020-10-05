@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     collection do
       get 'new_look'
       post 'create_look'
+      get 'new_flavor'
+      post 'create_flavor'
     end
   end
 end

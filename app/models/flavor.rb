@@ -9,6 +9,6 @@ class Flavor < ApplicationRecord
   belongs_to_active_hash :third_flavor
 
   validates :impression, :flavor_volume, :first_flavor, :comment, presence: true
-  validates :impression_id, :flavor_volume_id, :first_flavor_id, :second_flavor_id, :third_flavor_id, numericality: { other_than: 1 }
+  validates :impression_id, :flavor_volume_id, :first_flavor_id, numericality: { other_than: 1 }
 
 end

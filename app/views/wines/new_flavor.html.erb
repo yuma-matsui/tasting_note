@@ -1,0 +1,18 @@
+<%= render 'shared/second_header' %>
+<div class="wine-new-look-main">
+  <div class="wine-new-form">
+    <%= form_with model: @flavor, url: create_flavor_wines_path, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @flavor %>
+    <h1 class="new-look-title">香りのコメント</h1>
+    <div><%= f.label :flavor_volume_id, "第一印象" %><span class="highlight">必須</span><br><%= f.collection_select(:flavor_volume_id, FlavorVolume.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :impression_id, "香りの印象" %><span class="highlight">必須</span><br><%= f.collection_select(:impression_id, Impression.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :first_flavor_id, "第一アロマ" %><span class="highlight">必須</span><br><%= f.collection_select(:first_flavor_id, FirstFlavor.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :second_flavor_id, "第二アロマ" %><span class="dependent">任意</span><br><%= f.collection_select(:second_flavor_id, SecondFlavor.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :third_flavor_id, "第三アロマ" %><span class="dependent">任意</span><br><%= f.collection_select(:third_flavor_id, ThirdFlavor.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :comment, "香りの特徴" %><span class="highlight">必須</span><br><%= f.text_area :comment, class:"form-input form-comment" %></div>
+    <div><%= f.submit "味わいの分析へ", class:"form-submit" %></div>
+    <div><%= link_to "戻る", "/", class:"form-submit back-btn" %></div>
+    <% end %>
+  </div>
+</div>
+<%= render 'shared/second_footer' %>

@@ -10,7 +10,7 @@ class WinesController < ApplicationController
   def create
     @wine = Wine.new(wine_params)
     if @wine.save
-      render :new_look
+      redirect_to root_path
     else
       render :new
     end
@@ -29,6 +29,19 @@ class WinesController < ApplicationController
     end
   end
 
+  def new_flavor
+    @flavor = Flavor.new
+  end
+
+  def create_flavor
+    @flavor = Flavor.new(flavor_params)
+    if @flavor.save
+      redirect_to root_path
+    else
+      render :new_flavor
+    end
+  end
+
   private
 
   def wine_params
@@ -37,6 +50,10 @@ class WinesController < ApplicationController
 
   def look_params
     params.require(:look).permit(:image, :color_tone_id, :intensity_id, :brightness_id, :viscosity_id, :comment).merge(wine_id: params[:wine_id])
+  end
+
+  def flavor_params
+    params.require(:flavor).permit(:impression_id, :flavor_volume_id, :first_flavor_id, :second_flavor_id, :third_flavor_id, :comment).merge(wine_id: params[:wine_id])
   end
   
 end
