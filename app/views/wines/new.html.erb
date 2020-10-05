@@ -19,6 +19,7 @@
     <div><%= f.label :marriage_food, "合わせたいお料理" %><span class="dependent">任意</span><br><%= f.text_field :marriage_food, class:"form-input" %></div>
     <div><%= f.label :producer, "生産者" %><span class="dependent">任意</span><br><%= f.text_field :producer, class:"form-input" %></div>
     <div><%= f.submit "外観コメントへ", class:"form-submit" %></div>
+    <div><%= link_to "戻る", "/", class:"form-submit back-btn" %></div>
     <% end %>
   </div>
 </div>

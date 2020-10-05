@@ -1,6 +1,6 @@
 class Wine < ApplicationRecord
   belongs_to :user
-  # has_one :look
+  has_one :look
   # has_one :flavor
   # has_one :taste
   has_one_attached :image

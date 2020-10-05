@@ -72,3 +72,9 @@
   padding: 3px;
   background-color: lightgray;
 }
+
+.back-btn{
+  text-decoration: none;
+  background-color: lightgray;
+  color: black;
+}

@@ -10,7 +10,12 @@
         <p class="left-contents-item" id="category-pull">カテゴリ</p>
         <p class="left-contents-item">
         詳細検索</p>
-        <%= link_to "ノート作成", new_wine_path, class: "left-contents-link left-contents-item" %>
+        <% if user_signed_in? %>
+          <%= link_to "ノート作成", new_wine_path, class: "left-contents-link left-contents-item" %>
+        <% else %>
+          <p class="left-contents-item">
+        記事一覧</p>
+        <% end %>
         <% unless user_signed_in? %>
           <%= link_to "会員登録", new_user_registration_path, class: "left-contents-link left-contents-item" %>
           <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>
