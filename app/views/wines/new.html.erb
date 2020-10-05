@@ -1,0 +1,26 @@
+<%= render 'shared/second_header' %>
+<div class="wine-new-main">
+  <div class="wine-new-form">
+    <%= form_with model: @wine, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @wine %>
+    <div><%= f.label :name, "ワイン名" %><span class="highlight">必須</span><br><%= f.text_field :name, class:"form-input" %></div>
+    <div><label name="image">画像</label><span class="highlight">必須</span><br><%= f.file_field :image ,class:"form-image" %></div>
+    <div><%= f.label :color_id, "色" %><span class="highlight">必須</span><br><%= f.collection_select(:color_id, Color.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :variety_id, "ぶどう品種" %><span class="highlight">必須</span><br><%= f.collection_select(:variety_id, Variety.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :country_id, "生産国" %><span class="highlight">必須</span><br><%= f.collection_select(:country_id, Country.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :region, "生産地域" %><span class="dependent">任意</span><br><%= f.text_field :region, class:"form-input" %></div>
+    <div><%= f.label :vintage, "ヴィンテージ" %><span class="highlight">必須</span><br><%= f.date_select :vintage,
+        prompt:'--',
+        start_year: ( Time.now.year - 1),
+        end_year: 1850,
+        discard_month: true,
+        discard_day: true, class:"form-select" %></div>
+    <div><%= f.label :alcohol_volume_id, "アルコール度数" %><span class="highlight">必須</span><br><%= f.collection_select(:alcohol_volume_id, AlcoholVolume.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :marriage_food, "合わせたいお料理" %><span class="dependent">任意</span><br><%= f.text_field :marriage_food, class:"form-input" %></div>
+    <div><%= f.label :producer, "生産者" %><span class="dependent">任意</span><br><%= f.text_field :producer, class:"form-input" %></div>
+    <div><%= f.submit "外観コメントへ", class:"form-submit" %></div>
+    <div><%= link_to "戻る", "/", class:"form-submit back-btn" %></div>
+    <% end %>
+  </div>
+</div>
+<%= render 'shared/second_footer' %>

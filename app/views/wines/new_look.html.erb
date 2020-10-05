@@ -1,0 +1,17 @@
+<%= render 'shared/second_header' %>
+<div class="wine-new-look-main">
+  <div class="wine-new-form">
+    <%= form_with model: @look, url: create_look_wines_path, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @look %>
+    <h1 class="new-look-title">外観コメント</h1>
+    <div><label name="image">画像</label><span class="highlight">必須</span><br><%= f.file_field :image ,class:"form-image" %></div>
+    <div><%= f.label :color_tone_id, "色調" %><span class="highlight">必須</span><br><%= f.collection_select(:color_tone_id, ColorTone.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :intensity_id, "濃淡" %><span class="highlight">必須</span><br><%= f.collection_select(:intensity_id, Intensity.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :brightness_id, "輝き" %><span class="highlight">必須</span><br><%= f.collection_select(:brightness_id, Brightness.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :viscosity_id, "粘性" %><span class="highlight">必須</span><br><%= f.collection_select(:viscosity_id, Viscosity.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :comment, "外観のフルコメント" %><span class="highlight">必須</span><br><%= f.text_area :comment, class:"form-input form-comment" %></div>
+    <div><%= f.submit "香りの分析へ", class:"form-submit" %></div>
+    <% end %>
+  </div>
+</div>
+<%= render 'shared/second_footer' %>

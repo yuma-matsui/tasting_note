@@ -1,0 +1,18 @@
+<%= render 'shared/second_header' %>
+<div class="wine-new-taste-main">
+  <div class="wine-new-form">
+    <%= form_with model: @taste, url: create_taste_wines_path, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @taste %>
+    <h1 class="new-look-title">味わいのコメント</h1>
+    <div><%= f.label :attack_id, "アタック" %><span class="highlight">必須</span><br><%= f.collection_select(:attack_id, Attack.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :alcohol_level_id, "アルコール" %><span class="highlight">必須</span><br><%= f.collection_select(:alcohol_level_id, AlcoholLevel.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :acidity_level_id, "酸味" %><span class="highlight">必須</span><br><%= f.collection_select(:acidity_level_id, AcidityLevel.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :tannic_level_id, "タンニン分" %><span class="highlight">必須</span><br><%= f.collection_select(:tannic_level_id, TannicLevel.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :after_flavor_id, "余韻" %><span class="highlight">必須</span><br><%= f.collection_select(:after_flavor_id, AfterFlavor.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :description_id, "バランス" %><span class="highlight">必須</span><br><%= f.collection_select(:description_id, Description.all, :id, :name, {}, { class:"form-select"}) %></div>
+    <div><%= f.label :comment, "味わいのフルコメント" %><span class="highlight">必須</span><br><%= f.text_area :comment, class:"form-input form-comment" %></div>
+    <div><%= f.submit "作成する", class:"form-submit" %></div>
+    <% end %>
+  </div>
+</div>
+<%= render 'shared/second_footer' %>
