@@ -1,0 +1,16 @@
+.wine-new-taste-main{
+  width: 100%;
+  background-image: url("/images/taste.new.jpg");
+  background-size: cover;
+  background-color: rgba(255,255,255,.7);
+  background-blend-mode: lighten;
+  height: 100%;
+}
+
+.wine-new-taste-main .form-select{
+  width: 75%;
+}
+
+.wine-new-taste-main .form-comment{
+  width: 100%;
+}

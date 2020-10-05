@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       post 'create_look'
       get 'new_flavor'
       post 'create_flavor'
+      get 'new_taste'
+      post 'create_taste'
     end
   end
 end

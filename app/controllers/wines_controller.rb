@@ -42,6 +42,19 @@ class WinesController < ApplicationController
     end
   end
 
+  def new_taste
+    @taste = Taste.new
+  end
+
+  def create_taste
+    @taste = Taste.new(taste_params)
+    if @taste.save
+      redirect_to root_path
+    else
+      render :new_taste
+    end
+  end
+
   private
 
   def wine_params
@@ -54,6 +67,10 @@ class WinesController < ApplicationController
 
   def flavor_params
     params.require(:flavor).permit(:impression_id, :flavor_volume_id, :first_flavor_id, :second_flavor_id, :third_flavor_id, :comment).merge(wine_id: params[:wine_id])
+  end
+
+  def taste_params
+    params.require(:taste).permit(:attack_id, :alcohol_level_id, :acidity_level_id, :tannic_level_id, :after_flavor_id, :description_id, :comment).merge(wine_id: params[:wine_id])
   end
   
 end
