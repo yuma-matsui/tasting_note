@@ -25,14 +25,14 @@
 }
 
 .header-menu{
-  display: flex;
   height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .header-left-contents{
-  width: 90%;
+  width: 100%;
 }
-
 
 .left-contents-menu{
   display: flex;
@@ -56,93 +56,98 @@
   padding-top: 15px;
 }
 
-.header-right-contents{
-  width: 10%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 8px;
+.left-contents-fade{
+  opacity: 0;
+  animation: fade-down .8s ease-in-out .6s 1 normal forwards;
 }
 
-.user-menu-on{
-  width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 8px;
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-@keyframes fadeleft {
+.user-menu-btn :hover{
+  cursor: pointer;
+}
+
+.fade-in-first{
+  opacity: 0;
+  animation: fade-menu .4s ease-in-out .2s 1 normal forwards;
+}
+
+.fade-in-second{
+  opacity: 0;
+  animation: fade-menu .4s ease-in-out .3s 1 normal forwards;
+}
+
+.fade-in-third{
+  opacity: 0;
+  animation: fade-menu .4s ease-in-out .4s 1 normal forwards;
+}
+
+.fade-in-fourth{
+  opacity: 0;
+  animation: fade-menu .4s ease-in-out .5s 1 normal forwards;
+}
+
+@keyframes fade-menu {
   from {
       opacity: 0;
-       transform: translateX(150px);
   }
   to {
       opacity: 1;
-      transform: translateX(0);
   }
 }
 
-.user-menu-items-on {
-  font-size: 17px;
-  font-weight: bold;
-  animation-name: fadeleft;
-  animation-duration: 0.8s;
-  border-bottom:1px solid brown;
+.menu-btn{
+  position: absolute;
+  right: 10px;
+  top: 130px;
+  width: 50px;
+  height: 50px;
+  background-color: brown;
+  border-radius: 5px;
+  border: none;
 }
 
-.user-menu-on :hover {
-  border-bottom: none;
+.menu-line-top {
+  transform: translateY(-10px);
 }
 
-.user-menu-none {
-  display: none;
+.menu-line-bottom {
+  transform: translateY(10px);
 }
 
-.menu-trigger,
-.menu-trigger span {
-  display: inline-block;
-  transition: all .4s;
-  box-sizing: border-box;
+.open-menu .menu-line-top{
+  transform: rotate(45deg);
 }
 
-.menu-trigger {
-  position: relative;
-  width: 40px;
-  height: 34px;
+.open-menu .menu-line-middle{
+  opacity: 0;
 }
 
-.header-right-contents :hover{
-  cursor: pointer;
-  cursor: hand;
+.open-menu .menu-line-bottom{
+  transform: rotate(-45deg);
 }
 
-.user-menu-on :hover{
-  cursor: pointer;
-  cursor: hand;
-}
-
-.menu-trigger span {
+.menu-btn span{
+  display: block;
+  width: 80%;
+  margin: auto;
+  height: 4px;
+  background-color: white;
   position: absolute;
   left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: black;
-  border-radius: 4px;
-}
-
-.menu-trigger span:nth-of-type(1) {
-  top: 0;
-}
-
-.menu-trigger span:nth-of-type(2) {
-  top: 15px;
-}
-
-.menu-trigger span:nth-of-type(3) {
-  bottom: 0;
+  right: 0;
+  top: calc((100% - 4px)/2);
+  border-radius: 3px;
+  transition: .2s;
 }
 
 .category-bar-none{
@@ -159,11 +164,11 @@
   justify-content: space-around;
   padding: 10px;
   border: 1px solid white;
-  animation-name: fadedown;
+  animation-name: fade;
   animation-duration: 1s;
 }
 
-@keyframes fadedown {
+@keyframes fade {
   from {
       opacity: 0;
   }
