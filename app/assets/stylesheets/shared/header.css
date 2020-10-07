@@ -26,10 +26,91 @@
   color: brown;
 }
 
+.how-to-use{
+  width: 100%;
+  height: 150px;
+  margin: 5px auto;
+}
+
+.how-to-lists{
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.how-to-item{
+  border: 1px solid white;
+  border-radius: 80px;
+  background-color: rgb(179, 96, 96);
+  padding: 20px;
+  opacity: 0;
+  animation: fade .8s ease 1 normal forwards;
+}
+
+.how-to-item:nth-child(1){
+  animation-delay: 0s;
+}
+
+.how-to-item:nth-child(2){
+  animation-delay: .5s;
+}
+
+.how-to-item:nth-child(3){
+  animation-delay: 1s;
+}
+
+.how-to-item:nth-child(4){
+  animation-delay: 1.5s;
+}
+
+
+.how-to-heading{
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.how-to-content{
+  font-size: 12px;
+  color: white;
+}
+
 .header-menu{
   height: 60px;
   display: flex;
   align-items: center;
+}
+
+.how-to-animation :hover{
+  animation: yureru-j 2s infinite;
+}
+
+@keyframes yureru-j {
+  0% {
+      transform: translate(0px, 2px);
+  }
+  5% {
+      transform: translate(0px, -2px);
+  }
+  10% {
+      transform: translate(0px, 2px);
+  }
+  15% {
+      transform: translate(0px, -2px);
+  }
+  20% {
+      transform: translate(0px, 2px);
+  }
+  25% {
+      transform: translate(0px, -2px);
+  }
+  30% {
+      transform: translate(0px, 0px);
+  }
 }
 
 .header-left-contents{
@@ -43,6 +124,7 @@
 }
 
 .left-contents-menu :hover{
+  cursor: pointer;
   border-bottom: 2px solid brown;
 }
 
@@ -50,7 +132,6 @@
   text-decoration: none;
   color: black;
 }
-
 
 .left-contents-item{
   font-size: 17px;
