@@ -10,6 +10,5 @@ function openHowTo () {
       howToContainer.setAttribute("style", "display: none;");
     }
   });
-
 };
 window.addEventListener("load", openHowTo);
