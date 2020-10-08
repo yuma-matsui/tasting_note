@@ -5,6 +5,8 @@
   background-color: rgba(255,255,255,.7);
   background-blend-mode: lighten;
   height: 100%;
+  opacity: 0;
+  animation: fade-down .8s ease-in-out .3s 1 normal forwards;
 }
 
 .wine-new-form{

@@ -9,6 +9,9 @@ require("@rails/activestorage").start()
 require("channels")
 require("../menu_bar")
 require("../user_menu")
+require("../concept")
+require("../slide_image")
+require("../how_to")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

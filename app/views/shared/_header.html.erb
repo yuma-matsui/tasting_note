@@ -4,40 +4,59 @@
     <%= image_tag("top.logo.jpg", class:"header-logo") %>
   </div>
 
+  <div class="how-to-use" style="display: none;">
+    <nav class="how-to-lists">
+      <div class="how-to-item">
+        <h1 class="how-to-heading">1.会員登録</h1>
+        <p class="how-to-content">登録料は無料です。</p>
+      </div>
+      <div class="how-to-item">
+        <h1 class="how-to-heading">2.ノート作成</h1>
+        <p class="how-to-content">ワインを分析してノートに記録しよう。</p>
+      </div>
+      <div class="how-to-item">
+        <h1 class="how-to-heading">3.ノート一覧から学ぶ</h1>
+        <p class="how-to-content">他の利用者のノートを閲覧して<br>表現の幅を広げよう。</p>
+      </div>
+      <div class="how-to-item">
+        <h1 class="how-to-heading">4.記事を読んで学ぶ</h1>
+        <p class="how-to-content">記事を読んでワインをもっと知ろう。</p>
+      </div>
+    </nav>
+  </div>
+
   <div class="header-menu">
-    <div class="header-left-contents" id="header-left-off">
-      <nav class="left-contents-menu">
+    <div class="header-left-contents">
+      <nav class="left-contents-menu left-contents-fade" id="header-left-category">
+        <div class="how-to-animation"><p class="left-contents-item" id="how-to-trigger">
+        HOW TO USE</p></div>
         <p class="left-contents-item" id="category-pull">カテゴリ</p>
-        <p class="left-contents-item">
-        詳細検索</p>
         <% if user_signed_in? %>
           <%= link_to "ノート作成", new_wine_path, class: "left-contents-link left-contents-item" %>
-        <% else %>
-          <p class="left-contents-item">
-        記事一覧</p>
         <% end %>
+        <p class="left-contents-item">
+        記事一覧</p>
         <% unless user_signed_in? %>
           <%= link_to "会員登録", new_user_registration_path, class: "left-contents-link left-contents-item" %>
           <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>
         <% end %>
       </nav>
+      <nav class="left-contents-menu" id="header-left-user" style="display: none;">
+        <p class="left-contents-item fade-in-first">会員情報</p>
+        <p class="left-contents-item fade-in-second">マイノート</p>
+        <p class="left-contents-item fade-in-third">お気に入り</p>
+        <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"left-contents-link left-contents-item fade-in-fourth" %>
+      </nav>
     </div>
-
-    <div class="header-right-contents" id="header-right-on">
+    <div class="user-menu-btn" id="menu-btn">
       <% if user_signed_in? %>
-        <a class="menu-trigger" id="user-menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
+        <button class="menu-btn" id="user-menu-btn">
+          <span class="menu-line-top"></span>
+          <span class="menu-line-middle"></span>
+          <span class="menu-line-bottom"></span>
+        </button>
       <% end %>
-      <p class="user-menu-none"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"left-contents-link" %></p>
-      <p class="user-menu-none">お気に入り</p>
-      <p class="user-menu-none">編集</p>
-      <p class="user-menu-none">マイノート</p>
-      <p class="user-menu-none">会員情報</p>
     </div>
-
   </div>
 
   <div class="category-bar-none" id="category-bar-none">

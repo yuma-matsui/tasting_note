@@ -1,6 +1,10 @@
 class WinesController < ApplicationController
   before_action :session_set, only: [:create_look, :create_flavor, :create_taste]
 
+  def home
+    @wines = Wine.includes(:user, :look, :flavor, :taste).order(created_at: :desc)
+  end
+  
   def index
   end
 
