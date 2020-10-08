@@ -1,0 +1,157 @@
+.wine-show-main{
+  margin: 50px 0;
+  width: 100%;
+  height: 1300px;
+  opacity: 0;
+  animation: fade-down 1.5s ease-in-out .8s 1 normal forwards;
+}
+
+.wine-show-container{
+  width: 90%;
+  height: inherit;
+  margin: 0 auto;
+  border-top: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+.wine-show-top{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 100px 0;
+}
+
+.wine-show-middle{
+  height: 30%;
+  width: 100%;
+  display: flex;
+}
+
+.wine-show-bottom{
+  height: 25%;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid gray;
+  padding-top: 20px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 30px;
+}
+
+.wine-show-button{
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.wine-top-image{
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wine-top-detail{
+  height: 100%;
+  width: 40%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wine-show-image{
+  width: 80%;
+}
+
+.wine-show-heading{
+  padding-bottom: 6px;
+  border-bottom: 1px solid gray;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.wine-show-content{
+  margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.wine-show-name{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.wine-show-content span{
+  margin-left: 5px;
+  font-size: 17px;
+}
+
+.wine-show-look{
+  width: 60%;
+  padding-left: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: scroll;
+}
+
+.wine-show-look-image{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wine-look-image{
+  width: 100%;
+  height: 75%;
+}
+
+.show-look-title{
+  width: 18%;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.show-flavor-title{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.show-taste-title{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.show-flavor-container{
+  width: 50%;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.show-taste-container{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: scroll;
+}
