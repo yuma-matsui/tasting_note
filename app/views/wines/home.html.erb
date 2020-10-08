@@ -90,13 +90,13 @@
         <% @wines.each do |wine| %>
         <div class="note-item">
           <div class="note-content">
-            <%= image_tag wine.image.variant(resize: "400x400"), class:"note-image" %>
+            <%= image_tag wine.image.variant(resize: "500x500"), class:"note-image" %>
             <h2 class="note-name"><%= wine.name %></h2>
           </div>
         </div>
         <% end %>
       </ul>
-      <p class="note-button">VIEW ALL <span>→</span></p>
+      <%= link_to "VIEW ALL →", "/wines", class:"note-button" %>
     </div>
   </div>
   <%= render "shared/footer" %>

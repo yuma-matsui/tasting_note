@@ -1,12 +1,6 @@
 class WinesController < ApplicationController
   before_action :session_set, only: [:create_look, :create_flavor, :create_taste]
-
-  def home
-    @wines = Wine.includes(:user, :look, :flavor, :taste).order(created_at: :desc)
-  end
-  
-  def index
-  end
+  before_action :wines_set, only: [:home, :index]
 
   def new
     @wine = Wine.new
@@ -85,6 +79,10 @@ class WinesController < ApplicationController
 
   def taste_params
     params.require(:taste).permit(:attack_id, :alcohol_level_id, :acidity_level_id, :tannic_level_id, :after_flavor_id, :description_id, :comment).merge(wine_id: session["wine.data"]["wine"]["id"])
+  end
+
+  def wines_set
+    @wines = Wine.includes(:user, :look, :flavor, :taste).order(created_at: :desc)
   end
   
 end
