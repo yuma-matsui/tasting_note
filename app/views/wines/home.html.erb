@@ -87,30 +87,14 @@
     <div class="notes-space">
       <h1 class="note-title">Notes</h1>
       <ul class="notes-container">
+        <% @wines.each do |wine| %>
         <div class="note-item">
           <div class="note-content">
-            <div class="note-image"></div>
-            <h2 class="note-name">Name</h2>
+            <%= image_tag wine.image.variant(resize: "400x400"), class:"note-image" %>
+            <h2 class="note-name"><%= wine.name %></h2>
           </div>
         </div>
-        <div class="note-item">
-          <div class="note-content">
-            <div class="note-image"></div>
-            <h2 class="note-name">Name</h2>
-          </div>
-        </div>
-        <div class="note-item">
-          <div class="note-content">
-            <div class="note-image"></div>
-            <h2 class="note-name">Name</h2>
-          </div>
-        </div>
-        <div class="note-item">
-          <div class="note-content">
-            <div class="note-image"></div>
-            <h2 class="note-name">Name</h2>
-          </div>
-        </div>
+        <% end %>
       </ul>
       <p class="note-button">VIEW ALL <span>→</span></p>
     </div>

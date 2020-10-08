@@ -330,6 +330,7 @@
   height: 80%;
   width: 30%;
   margin: 65px;
+  background-color: black;
 }
 
 .note-content{
@@ -339,20 +340,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
-  border-radius: 3px;
-}
-
-.note-image{
-  width: 100%;
-  height: 88%;
-  background-image: url("/images/vineyard.jpg");
-  background-size: cover;
 }
 
 .note-name{
   font-weight: bold;
   font-size: 15px;
   color: white;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
+}
+
+.note-image{
+  width: 100%;
+  height: 85%;
 }
