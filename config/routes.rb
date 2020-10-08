@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "wines#index"
+  get "wines", to: "wines#home"
+  root to: "wines#home"
   resources :wines, only: [:index, :new, :create] do
     collection do
       get  'new_look'

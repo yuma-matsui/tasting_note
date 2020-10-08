@@ -1,6 +1,9 @@
 class WinesController < ApplicationController
   before_action :session_set, only: [:create_look, :create_flavor, :create_taste]
 
+  def home
+  end
+  
   def index
   end
 
