@@ -311,11 +311,9 @@
   font-weight: bold;
   padding-bottom: 3px;
   border-bottom: 3px solid black;
-}
-
-.note-button span{
-  font-size: 15px;
-  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin-top: 50px;
 }
 
 .notes-container{
@@ -352,4 +350,8 @@
 .note-image{
   width: 100%;
   height: 85%;
+}
+
+.wine-link{
+  text-decoration: none;
 }
