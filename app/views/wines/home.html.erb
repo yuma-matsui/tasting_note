@@ -89,10 +89,12 @@
       <ul class="notes-container">
         <% @wines.each do |wine| %>
         <div class="note-item">
-          <div class="note-content">
-            <%= image_tag wine.image.variant(resize: "500x500"), class:"note-image" %>
-            <h2 class="note-name"><%= wine.name %></h2>
-          </div>
+          <%= link_to "wines/#{wine.id}", class:"wine-link" do %>
+            <div class="note-content">
+              <%= image_tag wine.image.variant(resize: "500x500"), class:"note-image" %>
+              <h2 class="note-name"><%= wine.name %></h2>
+            </div>
+          <% end %>
         </div>
         <% end %>
       </ul>

@@ -36,6 +36,11 @@
   width: 250px;
   background-color: black;
   margin-bottom: 100px;
+}
+
+.wine-content{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -59,6 +59,9 @@ class WinesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def session_set
