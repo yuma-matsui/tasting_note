@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get "wines/home", to: "wines#home"
+  get "wines/notes", to: "wines#notes"
   root to: "wines#home"
   resources :wines, only: [:index, :new, :create, :show, :destroy] do
     collection do

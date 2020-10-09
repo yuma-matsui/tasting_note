@@ -68,6 +68,10 @@ class WinesController < ApplicationController
     end
   end
 
+  def notes
+    @wines = Wine.where(user_id: current_user.id).includes(:look, :flavor, :taste).order(created_at: :desc)
+  end
+
   private
 
   def session_set
