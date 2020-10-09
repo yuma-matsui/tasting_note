@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get "wines/home", to: "wines#home"
   root to: "wines#home"
-  resources :wines, only: [:index, :new, :create, :show] do
+  resources :wines, only: [:index, :new, :create, :show, :destroy] do
     collection do
       get  'new_look'
       post 'create_look'

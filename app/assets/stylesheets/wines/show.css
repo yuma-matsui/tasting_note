@@ -69,6 +69,29 @@
 
 .wine-show-image{
   width: 80%;
+  height: 85%;
+}
+
+.edit-buttons{
+  height: 15%;
+  width: 60%;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.destroy-button, .edit-button{
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 3px 6px;
+  background-color: black;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  height: 50%;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
 }
 
 .wine-show-heading{
