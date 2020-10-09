@@ -1,6 +1,7 @@
 class WinesController < ApplicationController
   before_action :session_set, only: [:create_look, :create_flavor, :create_taste]
   before_action :wines_set, only: [:home, :index]
+  before_action :wines_find, only: [:show, :destroy]
 
   def new
     @wine = Wine.new
@@ -59,12 +60,7 @@ class WinesController < ApplicationController
     end
   end
 
-  def show
-    @wine = Wine.find(params[:id])
-  end
-
   def destroy
-    @wine = Wine.find(params[:id])
     if @wine.destroy
       redirect_to root_path
     else
@@ -96,6 +92,10 @@ class WinesController < ApplicationController
 
   def wines_set
     @wines = Wine.includes(:user, :look, :flavor, :taste).order(created_at: :desc)
+  end
+
+  def wines_find
+    @wine = Wine.find(params[:id])
   end
   
 end

@@ -149,7 +149,7 @@
 .show-flavor-title{
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
 }
 
 .show-taste-title{
@@ -164,9 +164,9 @@
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   margin-left: 50px;
+  text-align: center;
 }
 
 .show-taste-container{
@@ -174,7 +174,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   overflow: scroll;
 }
