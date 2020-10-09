@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
   before_action :session_set, only: [:create_look, :create_flavor, :create_taste]
   before_action :wines_set, only: [:home, :index]
-  before_action :wines_find, only: [:show, :destroy]
+  before_action :wine_find, only: [:show, :destroy]
 
   def new
     @wine = Wine.new
@@ -72,6 +72,21 @@ class WinesController < ApplicationController
     @wines = Wine.where(user_id: current_user.id).includes(:look, :flavor, :taste).order(created_at: :desc)
   end
 
+  def color
+    @wine = Wine.where(color_id: params[:color_id]).first
+    @wines = Wine.where(color_id: params[:color_id]).includes(:look, :flavor, :taste).order(created_at: :desc)
+  end
+
+  def country
+    @wine = Wine.where(country_id: params[:country_id]).first
+    @wines = Wine.where(country_id: params[:country_id]).includes(:look, :flavor, :taste).order(created_at: :desc)
+  end
+
+  def grape
+    @wine = Wine.where(variety_id: params[:variety_id]).first
+    @wines = Wine.where(variety_id: params[:variety_id]).includes(:look, :flavor, :taste).order(created_at: :desc)
+  end
+
   private
 
   def session_set
@@ -98,7 +113,7 @@ class WinesController < ApplicationController
     @wines = Wine.includes(:user, :look, :flavor, :taste).order(created_at: :desc)
   end
 
-  def wines_find
+  def wine_find
     @wine = Wine.find(params[:id])
   end
   

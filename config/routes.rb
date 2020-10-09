@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "wines/home", to: "wines#home"
   get "wines/notes", to: "wines#notes"
   root to: "wines#home"
-  resources :wines, only: [:index, :new, :create, :show, :destroy] do
+  resources :wines do
     collection do
       get  'new_look'
       post 'create_look'
@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       post 'create_flavor'
       get 'new_taste'
       post 'create_taste'
+      get 'color'
+      get 'country'
+      get 'grape'
     end
   end
 end

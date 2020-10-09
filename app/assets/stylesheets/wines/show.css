@@ -64,7 +64,6 @@
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .wine-show-image{
@@ -101,6 +100,10 @@
   font-size: 18px;
 }
 
+.wine-show-contents{
+  margin-top: 5px;
+}
+
 .wine-show-content{
   margin-bottom: 7px;
   font-weight: bold;
@@ -109,7 +112,8 @@
 
 .wine-show-name{
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .wine-show-content span{

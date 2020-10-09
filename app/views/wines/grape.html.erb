@@ -1,0 +1,7 @@
+<%= render "shared/header" %>
+<% if @wine != nil %>
+  <%= render partial: "index", locals: { title: "#{@wine.variety.name}" } %>
+<% else %>
+  <%= render partial: "index", locals: { title: "NO WINE" } %>
+<% end %>
+<%= render "shared/footer" %>

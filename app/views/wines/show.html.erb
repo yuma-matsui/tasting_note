@@ -6,7 +6,7 @@
         <%= image_tag @wine.image.variant(resize: "500x500"), class:"wine-show-image" %>
         <% if user_signed_in? && current_user.id == @wine.user_id %>
           <div class="edit-buttons">
-            <p class="edit-button">編集</p>
+            <%= link_to "編集", "/", class:"edit-button" %>
             <%= link_to "削除", "/wines/#{@wine.id}", class:"destroy-button", method: :delete %>
           </div>
         <% end %>
