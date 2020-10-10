@@ -1,0 +1,17 @@
+<%= render 'shared/second_header' %>
+<div class="session-top">
+  <div class="session-main registration-main">
+    <div class="field">
+      <h2>名前</h2>
+      <p><%= @user.name %></p>
+    </div>
+    <div class="field">
+      <h2>メールアドレス</h2>
+      <p><%= @user.email %></p>
+    </div>
+    <div class="field">
+      <div class="user-edit-btn"><%= link_to "変更", edit_user_registration_path(current_user), class:"user-edit" %></div>
+    </div>
+  </div>
+</div>
+<%= render 'shared/second_footer' %>

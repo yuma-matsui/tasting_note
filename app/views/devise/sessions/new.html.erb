@@ -1,6 +1,4 @@
-<div class="session-header">
-  <%= render 'shared/second_header' %>
-</div>
+<%= render 'shared/second_header' %>
 <div class='login-flash-message'>
   <%= flash[:notice] %>
   <%= flash[:alert] %>
@@ -24,8 +22,4 @@
     <% end %>
   </div>
 </div>
-<div class="session-footer">
-  <footer class="session-footer">
-  <h2 class="footer-title">Tasting Note</h2>
-  </footer>
-</div>
+<%= render 'shared/second_footer' %>

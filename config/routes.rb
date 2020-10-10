@@ -16,4 +16,5 @@ Rails.application.routes.draw do
       get 'grape'
     end
   end
+  resources :users, only: [:show]
 end
