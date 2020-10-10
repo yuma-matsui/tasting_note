@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   get "wines/home", to: "wines#home"
   get "wines/notes", to: "wines#notes"
+  get "wines/color", to: "wines#color"
+  get "wines/country", to: "wines#country"
+  get "wines/grape", to: "wines#grape"
   root to: "wines#home"
   resources :wines do
     collection do
@@ -11,9 +14,6 @@ Rails.application.routes.draw do
       post 'create_flavor'
       get 'new_taste'
       post 'create_taste'
-      get 'color'
-      get 'country'
-      get 'grape'
     end
   end
   resources :users, only: [:show]
