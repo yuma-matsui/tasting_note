@@ -1,0 +1,18 @@
+<div class="wines-all-main">
+  <div class="wines-container">
+    <h1 class="wines-all-title"><%= title %></h1>
+    <div class="wines-all-items">
+      <% @wines.each do |wine| %>
+      <div class="wines-item-image">
+        <%= link_to wine_path(wine.id), class:"wine-link" do %>
+          <div class="wine-content">
+            <%= image_tag wine.image.variant(resize: "500x500"), class:"wine-item-image" %>
+            <h2 class="wine-item-name"><%= wine.name %></h2>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <%= link_to "BACK TO HOME →", "/", class:"wines-all-button" %>
+  </div>
+</div>

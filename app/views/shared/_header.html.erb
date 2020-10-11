@@ -41,12 +41,14 @@
           <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>
         <% end %>
       </nav>
-      <nav class="left-contents-menu" id="header-left-user" style="display: none;">
-        <p class="left-contents-item fade-in-first">会員情報</p>
-        <p class="left-contents-item fade-in-second">マイノート</p>
-        <p class="left-contents-item fade-in-third">お気に入り</p>
-        <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"left-contents-link left-contents-item fade-in-fourth" %>
-      </nav>
+      <% if user_signed_in? %>
+        <nav class="left-contents-menu" id="header-left-user" style="display: none;">
+          <%= link_to "会員情報", user_path(current_user), class:"left-contents-item fade-in-first left-contents-link" %>
+          <%= link_to "マイノート", wines_notes_path, class:"left-contents-item fade-in-second left-contents-link" %>
+          <p class="left-contents-item fade-in-third">お気に入り</p>
+          <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"left-contents-link left-contents-item fade-in-fourth" %>
+        </nav>
+      <% end %>
     </div>
     <div class="user-menu-btn" id="menu-btn">
       <% if user_signed_in? %>
@@ -63,51 +65,47 @@
     <div class="category-bar" id="category-bar-on">
       <nav class="wine-type">
         <h1>タイプから探す</h1>
-        <p class="category-item">赤ワイン</p>
-        <p>白ワイン</p>
-        <p>ロゼワイン</p>
-        <p>スパークリングワイン</p>
-        <p>ライトボディ</p>
-        <p>ミディアムボディ</p>
-        <p>フルボディ</p>
+        <p><%= link_to "白ワイン", wines_color_path(color_id: 2), class:"left-contents-link" %></p>
+        <p><%= link_to "赤ワイン", wines_color_path(color_id: 3), class:"left-contents-link" %></p>
+        <p><%= link_to "ロゼワイン", wines_color_path(color_id: 4), class:"left-contents-link" %></p>
+        <p><%= link_to "スパークリングワイン", wines_color_path(color_id: 5), class:"left-contents-link" %></p>
       </nav>
       <nav class="wine-country">
         <h1>産地から探す</h1>
-        <p>フランス</p>
-        <p>イタリア</p>
-        <p>スペイン</p>
-        <p>アメリカ</p>
-        <p>チリ</p>
-        <p>オーストラリア</p>
-        <p>ニュージーランド</p>
-        <p>日本</p>
-        <p>南アフリカ</p>
-        <p>アルゼンチン</p>
-        <p>その他</p>
+        <p><%= link_to "フランス", wines_country_path(country_id: 2), class:"left-contents-link" %></p>
+        <p><%= link_to "イタリア", wines_country_path(country_id: 3), class:"left-contents-link" %></p>
+        <p><%= link_to "スペイン", wines_country_path(country_id: 4), class:"left-contents-link" %></p>
+        <p><%= link_to "アメリカ", wines_country_path(country_id: 5), class:"left-contents-link" %></p>
+        <p><%= link_to "チリ", wines_country_path(country_id: 6), class:"left-contents-link" %></p>
+        <p><%= link_to "オーストラリア", wines_country_path(country_id: 7), class:"left-contents-link" %></p>
+        <p><%= link_to "ニュージーランド", wines_country_path(country_id: 8), class:"left-contents-link" %></p>
+        <p><%= link_to "日本", wines_country_path(country_id: 9), class:"left-contents-link" %></p>
+        <p><%= link_to "南アフリカ", wines_country_path(country_id: 10), class:"left-contents-link" %></p>
+        <p><%= link_to "アルゼンチン", wines_country_path(country_id: 11), class:"left-contents-link" %></p>
+        <p><%= link_to "その他", wines_country_path(country_id: 12), class:"left-contents-link" %></p>
       </nav>
       <nav class="wine-grape">
         <nav>
           <h1>品種から探す</h1>
-          <h2>黒ぶどう</h2>
-          <p>カベルネ・ソーヴィニヨン</p>
-          <p>メルロー</p>
-          <p>ピノノワール</p>
-          <p>シラー</p>
-          <p>マルベック</p>
-          <p>サンジョベーゼ</p>
-          <p>テンプラニーリョ</p>
-          <p>その他</p>
+          <h2>白ぶどう</h2>
+          <p><%= link_to "シャルドネ", wines_grape_path(variety_id: 9), class:"left-contents-link" %></p>
+          <p><%= link_to "ソーヴィニヨン・ブラン", wines_grape_path(variety_id: 10), class:"left-contents-link" %></p>
+          <p><%= link_to "リースリング", wines_grape_path(variety_id: 11), class:"left-contents-link" %></p>
+          <p><%= link_to "ヴィオニエ", wines_grape_path(variety_id: 12), class:"left-contents-link" %></p>
+          <p><%= link_to "甲州", wines_grape_path(variety_id: 13), class:"left-contents-link" %></p>
+          <p><%= link_to "ゲヴェルツトラミネール", wines_grape_path(variety_id: 14), class:"left-contents-link" %></p>
+          <p><%= link_to "ピノ・グリ", wines_grape_path(variety_id: 15), class:"left-contents-link" %></p>
         </nav>
         <nav class="white-grape">
-          <h2>白ぶどう</h2>
-          <p>シャルドネ</p>
-          <p>ソーヴィニヨン・ブラン</p>
-          <p>リースリング</p>
-          <p>ビオニエ</p>
-          <p>甲州</p>
-          <p>ゲヴェルツトラミネール</p>
-          <p>ピノグリ</p>
-          <p>その他</p>
+          <h2>黒ぶどう</h2>
+          <p><%= link_to "カベルネ・ソーヴィニヨン", wines_grape_path(variety_id: 2), class:"left-contents-link" %></p>
+          <p><%= link_to "メルロ", wines_grape_path(variety_id: 3), class:"left-contents-link" %></p>
+          <p><%= link_to "ピノ・ノワール", wines_grape_path(variety_id: 4), class:"left-contents-link" %></p>
+          <p><%= link_to "シラー", wines_grape_path(variety_id: 5), class:"left-contents-link" %></p>
+          <p><%= link_to "マルベック", wines_grape_path(variety_id: 6), class:"left-contents-link" %></p>
+          <p><%= link_to "サンジョベーゼ", wines_grape_path(variety_id: 7), class:"left-contents-link" %></p>
+          <p><%= link_to "テンプラニーリョ", wines_grape_path(variety_id: 8), class:"left-contents-link" %></p>
+          <p><%= link_to "その他", wines_grape_path(variety_id: 16), class:"left-contents-link" %></p>
         </nav>
       </nav>
     </div>

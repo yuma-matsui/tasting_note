@@ -1,0 +1,30 @@
+.field h2{
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  animation: fade .5s ease-in-out .2s 1 normal forwards;
+}
+
+.field p{
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  opacity: 0;
+  animation: fade .5s ease-in-out .4s 1 normal forwards;
+}
+
+.field .user-edit{
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.field .user-edit-btn{
+  width: 60px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: brown;
+  opacity: 0;
+  animation: fade .5s ease-in-out .6s 1 normal forwards;
+}
