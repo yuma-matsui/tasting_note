@@ -68,6 +68,10 @@ class WinesController < ApplicationController
     end
   end
 
+  def home
+    @articles = Article.all.order(created_at: :desc)
+  end
+
   def notes
     @wines = Wine.where(user_id: current_user.id).includes(:look, :flavor, :taste).order(created_at: :desc)
   end

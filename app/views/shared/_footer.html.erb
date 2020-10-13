@@ -2,24 +2,24 @@
   <div class="footer-lists">
     <nav class="articles">
       <h2>テイスティングについて</h2>
-      <p>記事一覧</p>
+      <p><%= link_to "記事一覧", articles_path, class:"contents-link" %></p>
       <p><%= link_to "投稿一覧", wines_path, class:"contents-link" %></p>
     </nav>
     <nav class="footer-country">
       <div class="country-half">
         <h2>生産国</h2>
-        <p>フランス</p>
-        <p>イタリア</p>
-        <p>スペイン</p>
-        <p>アメリカ</p>
-        <p>チリ</p>
+        <p><%= link_to "フランス", article_path(id: 11), class:"contents-link" %></p>
+        <p><%= link_to "イタリア", article_path(id: 12), class:"contents-link" %></p>
+        <p><%= link_to "スペイン", article_path(id: 13), class:"contents-link" %></p>
+        <p><%= link_to "アメリカ", article_path(id: 14), class:"contents-link" %></p>
+        <p><%= link_to "チリ", article_path(id: 15), class:"contents-link" %></p>
       </div>
       <div class="country-end">
-        <p>オーストラリア</p>
-        <p>ニュージーランド</p>
-        <p>日本</p>
-        <p>南アフリカ</p>
-        <p>アルゼンチン</p>
+        <p><%= link_to "オーストラリア", article_path(id: 16), class:"contents-link" %></p>
+        <p><%= link_to "ニュージーランド", article_path(id: 17), class:"contents-link" %></p>
+        <p><%= link_to "日本", article_path(id: 18), class:"contents-link" %></p>
+        <p><%= link_to "南アフリカ", article_path(id: 19), class:"contents-link" %></p>
+        <p><%= link_to "アルゼンチン", article_path(id: 20), class:"contents-link" %></p>
       </div>
     </nav>
     <nav class="footer-grape">
