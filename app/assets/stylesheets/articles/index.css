@@ -1,0 +1,9 @@
+.article-index-container{
+  margin: 50px auto;
+  opacity: 0;
+  animation: fade-down 1.5s ease-in-out .8s 1 normal forwards;
+}
+
+.article-index-title{
+  margin-bottom: 45px;
+}

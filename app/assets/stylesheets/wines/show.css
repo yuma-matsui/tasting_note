@@ -93,6 +93,19 @@
   text-decoration: none;
 }
 
+.favorite-button{
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 5px;
+  background-color: brown;
+  font-size: 16px;
+  font-weight: bold;
+  width: 25%;
+  height: 50%;
+}
+
 .wine-show-heading{
   padding-bottom: 6px;
   border-bottom: 1px solid gray;
