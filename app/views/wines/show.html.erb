@@ -9,6 +9,10 @@
             <%= link_to "編集", "/", class:"edit-button" %>
             <%= link_to "削除", "/wines/#{@wine.id}", class:"destroy-button", method: :delete %>
           </div>
+        <% else %>
+          <div class="edit-buttons">
+            <%= link_to "お気に入り", "/", class:"favorite-button" %>
+          </div>
         <% end %>
       </div>
       <div class="wine-top-detail">
@@ -66,7 +70,7 @@
         </ul>
       </div>
     </div>
-    <%=link_to "← BACK TO ALL", wines_path, class:"wine-show-button" %>
+    <%=link_to "BACK TO NOTES →", wines_path, class:"wine-show-button" %>
   </div>  
 </div>
 <%= render "shared/footer" %>

@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+<div class="articles-space article-index-container">
+  <h1 class="article-title article-index-title">ARTICLES</h1>
+  <div class="article-items">
+    <% @articles.each do |article| %>
+      <div class="article-item">
+        <%= link_to article_path(article.id), class:"wine-link" do %>
+          <div  class="article-content">
+            <div>
+              <div class="article-time">
+                <h3 class="article-item-time"><%= article.created_at.year %>年</h3>
+                <h3 class="article-item-time"><%= article.created_at.month %>月</h3>
+                <h3 class="article-item-time"><%= article.created_at.day %>日</h3>
+              </div>
+              <h2 class="article-item-name"><%= article.title %></h2>
+            </div>
+            <span>→</span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "BACK TO HOME →", "/", class:"wines-all-button" %>
+</div>
+<%= render "shared/footer" %>

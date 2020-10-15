@@ -15,7 +15,7 @@
         <p class="how-to-content">ワインを分析してノートに記録しよう。</p>
       </div>
       <div class="how-to-item">
-        <h1 class="how-to-heading">3.ノート一覧から学ぶ</h1>
+        <h1 class="how-to-heading">3.ノートから学ぶ</h1>
         <p class="how-to-content">他の利用者のノートを閲覧して<br>表現の幅を広げよう。</p>
       </div>
       <div class="how-to-item">
@@ -34,8 +34,7 @@
         <% if user_signed_in? %>
           <%= link_to "ノート作成", new_wine_path, class: "left-contents-link left-contents-item" %>
         <% end %>
-        <p class="left-contents-item">
-        記事一覧</p>
+        <%= link_to "記事一覧", articles_path, class:"left-contents-link left-contents-item" %>
         <% unless user_signed_in? %>
           <%= link_to "会員登録", new_user_registration_path, class: "left-contents-link left-contents-item" %>
           <%= link_to "ログイン", new_user_session_path, class: "left-contents-link left-contents-item" %>

@@ -353,4 +353,9 @@
 
 .wine-link{
   text-decoration: none;
+  color: black;
+}
+
+.article-time{
+  display: flex;
 }

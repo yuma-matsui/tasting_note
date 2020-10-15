@@ -48,35 +48,25 @@
     <div class="articles-space">
       <h1 class="article-title">ARTICLES</h1>
       <div class="article-items">
-        <div class="article-item">
-          <div  class="article-content">
-            <div>
-              <h3 class="article-item-time">Created at</h3>
-              <h2 class="article-item-name">Title</h2>
-            </div>
-            <span>→</span>
+        <% @articles.each do |article| %>
+          <div class="article-item">
+            <%= link_to article_path(article.id), class:"wine-link" do %>
+              <div  class="article-content">
+                <div>
+                  <div class="article-time">
+                    <h3 class="article-item-time"><%= article.created_at.year %>年</h3>
+                    <h3 class="article-item-time"><%= article.created_at.month %>月</h3>
+                    <h3 class="article-item-time"><%= article.created_at.day %>日</h3>
+                  </div>
+                  <h2 class="article-item-name"><%= article.title %></h2>
+                </div>
+                <span>→</span>
+              </div>
+            <% end %>
           </div>
-        </div>
-        <div class="article-item">
-          <div  class="article-content">
-            <div>
-              <h3 class="article-item-time">Created at</h3>
-              <h2 class="article-item-name">Title</h2>
-            </div>
-            <span>→</span>
-          </div>
-        </div>
-        <div class="article-item">
-          <div  class="article-content">
-            <div>
-              <h3 class="article-item-time">Created at</h3>
-              <h2 class="article-item-name">Title</h2>
-            </div>
-            <span>→</span>
-          </div>
-        </div>
+        <% end %>
       </div>
-      <p class="article-button">VIEW ALL <span>→</span></p>
+      <p class="article-button"><%= link_to "VIEW ALL →", articles_path, class:"wine-link" %></p>
     </div>
     <div class="notes-space">
       <h1 class="note-title">Notes</h1>
