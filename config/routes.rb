@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "wines/color", to: "wines#color"
   get "wines/country", to: "wines#country"
   get "wines/grape", to: "wines#grape"
+  get "articles/category", to: "articles#category"
   root to: "wines#home"
   resources :wines do
     collection do

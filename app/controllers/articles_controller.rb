@@ -8,4 +8,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def category
+    @article = Article.where(number: params[:number]).first
+  end
+
 end
