@@ -93,13 +93,25 @@
   text-decoration: none;
 }
 
-.favorite-button{
+.favorite-d-button{
   text-decoration: none;
   color: white;
   border: 1px solid white;
   border-radius: 6px;
   padding: 5px;
   background-color: brown;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50%;
+}
+
+.favorite-button{
+  text-decoration: none;
+  color: brown;
+  border: 1px solid brown;
+  border-radius: 6px;
+  padding: 5px;
+  background-color: white;
   font-size: 16px;
   font-weight: bold;
   height: 50%;

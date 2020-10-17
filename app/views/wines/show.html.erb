@@ -11,7 +11,8 @@
           </div>
         <% else %>
           <div class="edit-buttons">
-            <%= link_to "お気に入り追加", "/wines/#{@wine.id}/favorites", class:"favorite-button", method: :post %>
+            <%= link_to "お気に入り", "/wines/#{@wine.id}/favorites", class:"favorite-button", method: :post %>
+            <%= link_to "お気に入り", wine_favorite_path(@wine), class:"favorite-d-button", method: :delete %>
           </div>
         <% end %>
       </div>
