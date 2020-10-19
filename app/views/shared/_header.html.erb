@@ -44,7 +44,7 @@
         <nav class="left-contents-menu" id="header-left-user" style="display: none;">
           <%= link_to "会員情報", user_path(current_user), class:"left-contents-item fade-in-first left-contents-link" %>
           <%= link_to "マイノート", wines_notes_path, class:"left-contents-item fade-in-second left-contents-link" %>
-          <p class="left-contents-item fade-in-third">お気に入り</p>
+          <%= link_to "お気に入り", wine_favorites_path(current_user.id), class:"left-contents-item fade-in-second left-contents-link" %>
           <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"left-contents-link left-contents-item fade-in-fourth" %>
         </nav>
       <% end %>
