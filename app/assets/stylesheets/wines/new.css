@@ -80,3 +80,7 @@
   background-color: lightgray;
   color: black;
 }
+
+.image-preview{
+  display: flex;
+}

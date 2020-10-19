@@ -13,6 +13,8 @@ require("../user_menu")
 require("../concept")
 require("../slide_image")
 require("../how_to")
+require("../preview")
+require("../look_preview")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

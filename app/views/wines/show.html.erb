@@ -10,13 +10,15 @@
             <%= link_to "削除", "/wines/#{@wine.id}", class:"destroy-button", method: :delete %>
           </div>
         <% end %>
-        <div class="edit-buttons">
-          <% if user_signed_in? && current_user.id != @wine.user_id && @wine.favorite_by?(current_user) %>
-              <%= link_to "お気に入り", wine_favorite_path(wine_id: @wine.id, id: @wine.favorites[0].id), class:"favorite-d-button", method: :delete %>
-          <% else %>
-              <%= link_to "お気に入り", "/wines/#{@wine.id}/favorites", class:"favorite-button", method: :post %>
-          <% end %>
-        </div>
+        <% unless user_signed_in? && current_user.id == @wine.user_id %>
+          <div class="edit-buttons">
+            <% if user_signed_in? && current_user.id != @wine.user_id && @wine.favorite_by?(current_user) %>
+                <%= link_to "お気に入り", wine_favorite_path(wine_id: @wine.id, id: @wine.favorites[0].id), class:"favorite-d-button", method: :delete %>
+            <% else %>
+                <%= link_to "お気に入り", "/wines/#{@wine.id}/favorites", class:"favorite-button", method: :post %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="wine-top-detail">
         <h2 class="wine-show-name"><%= @wine.name %></h2>

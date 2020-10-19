@@ -5,6 +5,7 @@
     <%= render 'shared/error_messages', model: @look %>
     <h1 class="new-look-title">外観コメント</h1>
     <div><label name="image">画像</label><span class="highlight">必須</span><br><%= f.file_field :image ,class:"form-image" %></div>
+    <div id="image-list"></div>
     <div><%= f.label :color_tone_id, "色調" %><span class="highlight">必須</span><br><%= f.collection_select(:color_tone_id, ColorTone.all, :id, :name, {}, { class:"form-select"}) %></div>
     <div><%= f.label :intensity_id, "濃淡" %><span class="highlight">必須</span><br><%= f.collection_select(:intensity_id, Intensity.all, :id, :name, {}, { class:"form-select"}) %></div>
     <div><%= f.label :brightness_id, "輝き" %><span class="highlight">必須</span><br><%= f.collection_select(:brightness_id, Brightness.all, :id, :name, {}, { class:"form-select"}) %></div>
