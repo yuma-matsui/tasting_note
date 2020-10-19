@@ -10,6 +10,6 @@ class Taste < ApplicationRecord
   belongs_to_active_hash :description
 
   validates :attack, :alcohol_level, :acidity_level, :tannic_level, :after_flavor, :description, :comment, presence: true
-  validates :attack_id, :alcohol_level_id, :acidity_level_id, :tannic_level_id, :after_flavor_id, :description_id, numericality: { other_than: 1 }
+  validates :attack_id, :alcohol_level_id, :acidity_level_id, :after_flavor_id, :description_id, numericality: { other_than: 1, message: "を選択してください" }
 
 end

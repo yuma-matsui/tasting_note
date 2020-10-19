@@ -27,25 +27,25 @@ RSpec.describe Flavor, type: :model do
       it 'commentが空の場合' do
         @flavor.comment = nil
         @flavor.valid?
-        expect(@flavor.errors.full_messages).to include("Comment can't be blank")
+        expect(@flavor.errors.full_messages).to include("コメントを入力してください")
       end
 
       it 'impression_idが空の場合' do
         @flavor.impression_id = '1'
         @flavor.valid?
-        expect(@flavor.errors.full_messages).to include("Impression must be other than 1")
+        expect(@flavor.errors.full_messages).to include("第一印象を選択してください")
       end
 
       it 'flavor_volume_idが空の場合' do
         @flavor.flavor_volume_id = '1'
         @flavor.valid?
-        expect(@flavor.errors.full_messages).to include("Flavor volume must be other than 1")
+        expect(@flavor.errors.full_messages).to include("香りの印象を選択してください")
       end
 
       it 'first_flavor_idが空の場合' do
         @flavor.first_flavor_id = '1'
         @flavor.valid?
-        expect(@flavor.errors.full_messages).to include("First flavor must be other than 1")
+        expect(@flavor.errors.full_messages).to include("第一アロマを選択してください")
       end
     end
   end

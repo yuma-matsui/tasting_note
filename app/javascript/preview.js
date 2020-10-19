@@ -1,4 +1,4 @@
-if (location.pathname.match( "new" ) ) {
+if (location.pathname.match( "new" ) || location.pathname.match( "wines" ) ) {
   function preview () {
     const ImageList = document.getElementById('image-list');
     const ImageForm = document.getElementById('wine_image');
