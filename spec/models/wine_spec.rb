@@ -32,43 +32,43 @@ RSpec.describe Wine, type: :model do
       it 'imagesが空の場合' do
         @wine.image = nil
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Image can't be blank")
+        expect(@wine.errors.full_messages).to include("画像を入力してください")
       end
 
       it 'nameが空の場合' do
         @wine.name = nil
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Name can't be blank")
+        expect(@wine.errors.full_messages).to include("ワイン名を入力してください")
       end
 
       it 'vintageが空の場合' do
         @wine.vintage = nil
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Vintage can't be blank")
+        expect(@wine.errors.full_messages).to include("ヴィンテージを入力してください")
       end
 
       it 'color_idが空の場合' do
         @wine.color_id = '1'
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Color must be other than 1")
+        expect(@wine.errors.full_messages).to include("色を選択してください")
       end
 
       it 'variety_idが空の場合' do
         @wine.variety_id = '1'
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Variety must be other than 1")
+        expect(@wine.errors.full_messages).to include("ぶどう品種を選択してください")
       end
 
       it 'country_idが空の場合' do
         @wine.country_id = '1'
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Country must be other than 1")
+        expect(@wine.errors.full_messages).to include("生産国を選択してください")
       end
 
       it 'alcohol_volume_idが空の場合' do
         @wine.alcohol_volume_id = '1'
         @wine.valid?
-        expect(@wine.errors.full_messages).to include("Alcohol volume must be other than 1")
+        expect(@wine.errors.full_messages).to include("アルコール度数を選択してください")
       end
 
     end

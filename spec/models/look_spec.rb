@@ -17,37 +17,37 @@ RSpec.describe Look, type: :model do
       it 'imageが空の場合' do
         @look.image = nil
         @look.valid?
-        expect(@look.errors.full_messages).to include("Image can't be blank")
+        expect(@look.errors.full_messages).to include("画像を入力してください")
       end
 
       it 'commentが空の場合' do
         @look.comment = nil
         @look.valid?
-        expect(@look.errors.full_messages).to include("Comment can't be blank")
+        expect(@look.errors.full_messages).to include("コメントを入力してください")
       end
 
       it 'color_tone_idが空の場合' do
         @look.color_tone_id = '1'
         @look.valid?
-        expect(@look.errors.full_messages).to include("Color tone must be other than 1")
+        expect(@look.errors.full_messages).to include("色調を選択してください")
       end
 
       it 'intensity_idが空の場合' do
         @look.intensity_id = '1'
         @look.valid?
-        expect(@look.errors.full_messages).to include("Intensity must be other than 1")
+        expect(@look.errors.full_messages).to include("濃淡を選択してください")
       end
 
       it 'brightness_idが空の場合' do
         @look.brightness_id = '1'
         @look.valid?
-        expect(@look.errors.full_messages).to include("Brightness must be other than 1")
+        expect(@look.errors.full_messages).to include("輝きを選択してください")
       end
 
       it 'viscosity_idが空の場合' do
         @look.viscosity_id = '1'
         @look.valid?
-        expect(@look.errors.full_messages).to include("Viscosity must be other than 1")
+        expect(@look.errors.full_messages).to include("粘性を選択してください")
       end
 
     end
