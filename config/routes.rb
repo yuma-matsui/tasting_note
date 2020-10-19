@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "articles/category", to: "articles#category"
   root to: "wines#home"
   resources :wines do
+    resources :favorites, only: [:index, :create, :destroy]
     collection do
       get  'new_look'
       post 'create_look'
