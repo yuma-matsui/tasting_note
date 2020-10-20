@@ -6,7 +6,7 @@
         <%= image_tag @wine.image.variant(resize: "500x500"), class:"wine-show-image" %>
         <% if user_signed_in? && current_user.id == @wine.user_id %>
           <div class="edit-buttons">
-            <%= link_to "編集", "/", class:"edit-button" %>
+            <%= link_to "編集", edit_wine_path(@wine), class:"edit-button" %>
             <%= link_to "削除", "/wines/#{@wine.id}", class:"destroy-button", method: :delete %>
           </div>
         <% end %>
@@ -47,7 +47,14 @@
         </ul>
       </div>
       <div class="wine-show-look-image">
-        <%= image_tag @wine.look.image.variant(resize: "500x500"), class:"wine-look-image" %>
+        <div class="wine-show-look-container">
+          <%= image_tag @wine.look.image.variant(resize: "500x500"), class:"wine-look-image" %>
+          <% if user_signed_in? && current_user.id == @wine.user_id %>
+          <div class="look-button">
+            <%= link_to "編集", edit_wine_look_path(@wine), class:"edit-button" %>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="wine-show-bottom">

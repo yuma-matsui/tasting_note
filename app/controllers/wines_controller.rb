@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
   before_action :session_set, only: [:create_look, :create_flavor, :create_taste]
   before_action :wines_set, only: [:home, :index]
-  before_action :wine_find, only: [:show, :destroy]
+  before_action :wine_find, only: [:show, :destroy, :edit, :update]
 
   def new
     @wine = Wine.new
@@ -65,6 +65,14 @@ class WinesController < ApplicationController
       redirect_to root_path
     else
       render :show
+    end
+  end
+
+  def update
+    if @wine.update(wine_params)
+      redirect_to wine_path(@wine)
+    else
+      render :edit
     end
   end
 

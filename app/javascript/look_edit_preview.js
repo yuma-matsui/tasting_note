@@ -1,4 +1,4 @@
-if (document.URL.match( /new/ ) || location.pathname.match( "create_look" ) ) {
+if (document.URL.match( /edit/ )) {
   function preview () {
     const ImageList = document.getElementById('image-list');
     const ImageForm = document.getElementById('look_image');
@@ -16,7 +16,7 @@ if (document.URL.match( /new/ ) || location.pathname.match( "create_look" ) ) {
       const imageElement = document.createElement('div');
       const blobImage = document.createElement('img');
       blobImage.setAttribute('src', blob);
-      blobImage.setAttribute('style', 'width: 100px; height: 100px;');
+      blobImage.setAttribute('style', 'width: 250px; height: 250px;');
 
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);

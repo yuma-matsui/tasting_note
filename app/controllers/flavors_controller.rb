@@ -1,0 +1,2 @@
+class FlavorsController < ApplicationController
+end

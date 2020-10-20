@@ -1,0 +1,19 @@
+.edit-submit{
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.edit-preview{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.wine-edit-top{
+  justify-content: space-between;
+}
