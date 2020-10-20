@@ -50,6 +50,3 @@ test:
 production:
   <<: *default
   database: tasting_note_production
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD2'] %>
-  socket: /var/lib/mysql/mysql.sock
