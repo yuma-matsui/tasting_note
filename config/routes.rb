@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       get 'new_taste'
       post 'create_taste'
     end
+    resources :looks, only: [:edit, :update]
+    resources :flavors, only: [:edit, :update]
+    resources :tastes, only: [:edit, :update]
     resources :favorites, only: [:index, :create, :destroy]
   end
   resources :users, only: [:show]
