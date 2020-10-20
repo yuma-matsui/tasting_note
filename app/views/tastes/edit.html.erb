@@ -1,0 +1,74 @@
+<%= render "shared/header" %>
+<div class="wine-show-main">
+    <%= form_with model: @taste, url: wine_taste_path(@taste), local: true do |f| %>
+    <div class="wine-show-container">
+      <%= render 'shared/error_messages', model: @taste %>
+      <div class="wine-show-top">
+        <div class="wine-top-image">
+          <%= image_tag @wine.image.variant(resize: "500x500"), class:"wine-show-image" %>
+        </div>
+        <div class="wine-top-detail">
+          <h2 class="wine-show-name"><%= @wine.name %></h2>
+          <p class="wine-show-heading">Detail</p>
+          <ul class="wine-show-contents">
+            <li class="wine-show-content">タイプ: <span><%= @wine.color.name %></span></li>
+            <li class="wine-show-content">ぶどう品種: <span><%= @wine.variety.name %></span></li>
+            <li class="wine-show-content">生産国: <span><%= @wine.country.name %></span></li>
+            <li class="wine-show-content">生産地域: <span><%= @wine.region %></span></li>
+            <li class="wine-show-content">ヴィンテージ: <span><%= @wine.vintage.year %>年</span></li>
+            <li class="wine-show-content">アルコール度数: <span><%= @wine.alcohol_volume.name %></span></li>
+            <li class="wine-show-content">合うお料理: <span><%= @wine.marriage_food %></span></li>
+            <li class="wine-show-content">生産者: <span><%= @wine.producer %></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wine-show-middle">
+        <div class="wine-show-look">
+          <h2 class="show-look-title">外観</h2>
+          <ul class="show-look-detail">
+            <li class="wine-show-content">色調: <span><%= @wine.look.color_tone.name %></span></li>
+            <li class="wine-show-content">濃淡: <span><%= @wine.look.intensity.name %></span></li>
+            <li class="wine-show-content">輝き: <span><%= @wine.look.brightness.name %></span></li>
+            <li class="wine-show-content">粘性: <span><%= @wine.look.viscosity.name %></span></li>
+            <li class="wine-show-content">フルコメント: <span><%= @wine.look.comment %></span></li>
+          </ul>
+        </div>
+        <div class="wine-show-look-image">
+          <div class="wine-show-look-container">
+            <%= image_tag @wine.look.image.variant(resize: "500x500"), class:"wine-look-image" %>
+          </div>
+        </div>
+      </div>
+      <div class="wine-show-bottom">
+        <div class="show-flavor-container">
+          <h2 class="show-flavor-title">香り</h2>
+          <ul class="show-look-detail">
+            <li class="wine-show-content">第一印象: <span><%= @wine.flavor.impression.name %></span></li>
+            <li class="wine-show-content">香りの印象: <span><%= @wine.flavor.flavor_volume.name %></span></li>
+            <li class="wine-show-content">第一アロマ: <span><%= @wine.flavor.first_flavor.name %></span></li>
+            <li class="wine-show-content">第二アロマ: <span><%= @wine.flavor.second_flavor.name %></span></li>
+            <li class="wine-show-content">第三アロマ: <span><%= @wine.flavor.third_flavor.name %></span></li>
+            <li class="wine-show-content">フルコメント: <span><%= @wine.flavor.comment %></span></li>
+          </ul>
+        </div>
+        <div class="show-taste-container">
+          <h2 class="show-taste-title">味わい</h2>
+          <ul class="show-look-detail">
+            <li class="wine-show-content">アタック: <span><%= f.collection_select(:attack_id, Attack.all, :id, :name, {}, { class:"form-select"}) %></span></li>
+            <li class="wine-show-content">アルコール: <span><%= f.collection_select(:alcohol_level_id, AlcoholLevel.all, :id, :name, {}, { class:"form-select"}) %></span></li>
+            <li class="wine-show-content">酸味: <span><%= f.collection_select(:acidity_level_id, AcidityLevel.all, :id, :name, {}, { class:"form-select"}) %></span></li>
+            <li class="wine-show-content">タンニン分: <span><%= f.collection_select(:tannic_level_id, TannicLevel.all, :id, :name, {}, { class:"form-select"}) %></span></li>
+            <li class="wine-show-content">余韻: <span><%= f.collection_select(:after_flavor_id, AfterFlavor.all, :id, :name, {}, { class:"form-select"}) %></span></li>
+            <li class="wine-show-content">バランス: <span><%= f.collection_select(:description_id, Description.all, :id, :name, {}, { class:"form-select"}) %></span></li>
+            <li class="wine-show-content">フルコメント: <span><%= f.text_area :comment, class:"form-input form-comment" %></span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <%= f.submit "変更する", class:"edit-submit" %>
+      </div>
+      <%=link_to "BACK TO WINE →", wine_path(@wine), class:"wine-show-button" %>
+    </div>  
+    <% end %>
+    <%= render "shared/footer" %>
+</div>

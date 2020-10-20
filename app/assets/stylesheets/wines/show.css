@@ -163,9 +163,23 @@
   align-items: center;
 }
 
+.wine-show-look-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .wine-look-image{
   width: 100%;
-  height: 75%;
+  height: 80%;
+  padding: 5px 0px;
+}
+
+.look-button{
+  height: 10%;
 }
 
 .show-look-title{
@@ -204,4 +218,10 @@
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+}
+
+.show-look-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
