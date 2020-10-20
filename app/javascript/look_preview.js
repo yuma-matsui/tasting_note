@@ -1,4 +1,4 @@
-if (document.URL.match( /new/ ) || location.pathname.match( "create_look" ) ) {
+if (document.URL.match( /wines/ ) || location.pathname.match( "create_look" ) ) {
   function preview () {
     const ImageList = document.getElementById('image-list');
     const ImageForm = document.getElementById('look_image');
