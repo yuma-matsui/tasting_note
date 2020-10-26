@@ -112,20 +112,7 @@ Things you may want to cover:
 
 - belongs_to :wine
 
-## comments テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | text       | null: false                    |
-| user    | references | null: false, foreign_key: true |
-| wine    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :wine
-
-## likes テーブル
+## favorites テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
