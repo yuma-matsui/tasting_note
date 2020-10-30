@@ -31,6 +31,7 @@
   color: white;
   background-color: brown;
   border-radius: 6px;
+  box-shadow: 0 0 8px rgba(43, 15, 15, 0.8);
 }
 
 .session-footer{

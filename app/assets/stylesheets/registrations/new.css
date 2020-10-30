@@ -4,10 +4,10 @@
 }
 
 .registration-form{
-  font-size: 14px;
+  font-size: .8em;
   width: 90%;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 3px;
 }
 

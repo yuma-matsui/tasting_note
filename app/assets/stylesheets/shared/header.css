@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 .header-contents{
   width: 100%;
   display: flex;
@@ -23,6 +25,7 @@
   font-weight: bold;
   font-style: italic;
   color: brown;
+  font-family: 'Dancing Script', cursive;
 }
 
 .how-to-use{
