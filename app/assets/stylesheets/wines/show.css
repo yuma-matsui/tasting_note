@@ -225,3 +225,75 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media only screen and (max-width: 375px){
+
+  .wine-show-main{
+    margin: 15px auto;
+    height: 900px;
+  }
+  .wine-show-top{
+    padding: 30px 0;
+    height: 300px;
+  }
+
+  .wine-show-name{
+    font-size: 17px;
+  }
+
+  .wine-show-heading{
+    font-size: 15px;
+  }
+
+  .wine-show-content, .wine-show-content>span{
+    font-size: 11px;
+  }
+
+  .edit-button, .destroy-button{
+    font-size: 11px;
+  }
+
+  .wine-show-middle{
+    height: 150px;
+  }
+
+  .wine-show-look-container{
+    justify-content: center;
+  }
+
+  .wine-show-look{
+    justify-content: center;
+  }
+
+  .show-look-title{
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .wine-look-image{
+    height: 65%;
+  }
+
+  .wine-show-bottom h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .show-flavor-container{
+    margin: 0 auto;
+  }
+
+  .show-taste-container{
+    margin: 0 auto;
+  }
+
+  .wine-show-bottom{
+    height: 180px;
+  }
+
+  .wine-show-button{
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+}
