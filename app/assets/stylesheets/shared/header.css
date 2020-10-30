@@ -44,9 +44,9 @@
 
 .how-to-item{
   border: 1px solid white;
-  border-radius: 80px;
+  border-radius: 50%;
   background-color: rgb(179, 96, 96);
-  padding: 20px;
+  padding: 18px;
   opacity: 0;
   animation: fade .8s ease 1 normal forwards;
 }
@@ -66,7 +66,6 @@
 .how-to-item:nth-child(4){
   animation-delay: 1.5s;
 }
-
 
 .how-to-heading{
   text-align: center;
@@ -289,4 +288,85 @@
 .white-grape{
   margin-left: 15px;
   margin-top: 37px;
+}
+
+@media only screen and (max-width: 1024px){
+  
+  .left-contents-item{
+    font-size: 20px;
+  }
+
+  .header-title{
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+
+  .header-top{
+    height: 80px;
+  }
+  
+  .left-contents-item{
+    font-size: 12px;
+  }
+
+  .header-title{
+    font-size: 25px;
+  }
+
+  .menu-btn{
+    height: 30px;
+    width: 30px;
+  }
+
+  .how-to-use{
+    height: 75px;
+    margin: 5px 3px;
+  }
+
+  .how-to-item p{
+    display: none;
+  }
+
+  .how-to-item h1{
+    font-size: 12px;
+  }
+
+  .how-to-item{
+    padding: 10px;
+    margin-right: 6px;
+  }
+
+  .how-to-use{
+    height: 55px;
+  }
+
+  .category-bar h1{
+    font-size: 11px;
+  }
+
+  .category-bar h2{
+    font-size: 10px;
+  }
+
+  .category-bar .left-contents-link{
+    font-size: 9px;
+  }
+
+  .category-bar .wine-grape{
+    padding-left: 8px;
+  }
+
+  .red-grape{
+    margin-top: 34px;
+  }
+
+  .red-grape>h2{
+    margin: 0;
+  }
+
+  .wine-grape :nth-child(1) h2{
+    margin: 16px 0 3px;
+  }
 }

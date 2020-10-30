@@ -75,3 +75,50 @@
   text-decoration: none;
   color: black;
 }
+
+@media only screen and (max-width: 1024px){
+  .footer-contents{
+    height: 250px;
+  }
+}
+
+
+@media only screen and (max-width: 375px){
+  
+  .footer-contents{
+    height: 180px;
+  }
+  
+  .footer-lists h2 {
+    font-size: 13px;
+  }
+
+  .footer-lists nav h3{
+    font-size: 12px;
+  }
+
+  .footer-lists .articles{
+    display: none;
+  }
+
+  .footer-lists .contents-link{
+    font-size: 10px;
+  }
+
+  .country-half>h2{
+    margin-bottom: 29px;
+  }
+
+  .country-end{
+    padding-top: 22px;
+  }
+
+  .footer-grape{
+    padding-left: 3px;
+  }
+
+  .footer-main{
+    margin-top: 25px;
+  }
+
+}
