@@ -358,6 +358,10 @@
     padding-left: 8px;
   }
 
+  .category-bar p{
+    font-size: 11px;
+  }
+
   .red-grape{
     margin-top: 34px;
   }

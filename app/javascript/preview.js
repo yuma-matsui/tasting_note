@@ -20,7 +20,6 @@ if (location.pathname.match( "new" )) {
 
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
-
     });
   };
   window.addEventListener("load", preview);

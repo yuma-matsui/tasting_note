@@ -1,14 +1,12 @@
 .wine-show-main{
   margin: 50px 0;
   width: 100%;
-  height: 1300px;
   opacity: 0;
   animation: fade-down 1.5s ease-in-out .8s 1 normal forwards;
 }
 
 .wine-show-container{
   width: 90%;
-  height: inherit;
   margin: 0 auto;
   border-top: 1px solid gray;
   display: flex;
@@ -19,7 +17,6 @@
 }
 
 .wine-show-top{
-  height: 40%;
   width: 100%;
   display: flex;
   border-bottom: 1px solid gray;
@@ -27,13 +24,12 @@
 }
 
 .wine-show-middle{
-  height: 30%;
   width: 100%;
+  height: 400px;
   display: flex;
 }
 
 .wine-show-bottom{
-  height: 25%;
   width: 100%;
   display: flex;
   border-top: 1px solid gray;
@@ -148,12 +144,12 @@
 .wine-show-look{
   width: 60%;
   padding-left: 15px;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   overflow: scroll;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .wine-show-look-image{
@@ -186,18 +182,19 @@
   width: 18%;
   font-size: 23px;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
 .show-flavor-title{
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 
 .show-taste-title{
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .show-flavor-container{
@@ -226,15 +223,35 @@
   align-items: center;
 }
 
+.show-look-detail li{
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1024px){
+  .wine-show-top{
+    padding: 60px 0;
+  }
+}
+
+
 @media only screen and (max-width: 375px){
 
   .wine-show-main{
     margin: 15px auto;
-    height: 900px;
   }
+
   .wine-show-top{
-    padding: 30px 0;
     height: 300px;
+    align-items: center;
+    padding: 25px 0;
+  }
+
+  .wine-show-image{
+    height: 70%;
+  }
+
+  .edit-button, .destroy-button{
+    padding: 0;
   }
 
   .wine-show-name{
@@ -254,7 +271,7 @@
   }
 
   .wine-show-middle{
-    height: 150px;
+    height: 300px;
   }
 
   .wine-show-look-container{
@@ -266,7 +283,7 @@
   }
 
   .show-look-title{
-    font-size: 17px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 
@@ -275,7 +292,7 @@
   }
 
   .wine-show-bottom h2{
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 
@@ -288,12 +305,12 @@
   }
 
   .wine-show-bottom{
-    height: 180px;
+    height: 250px;
   }
 
   .wine-show-button{
-    font-size: 20px;
-    margin-top: 0;
+    font-size: 15px;
+    margin-top: 15px;
   }
 
 }

@@ -389,8 +389,15 @@
   }
 
   .article-content{
-    font-size: 20px;
     line-height: 48px;
+  }
+
+  .article-content h2{
+    font-size: 23px;
+  }
+
+  .article-content h3{
+    font-size: 20px;
   }
 
   .article-button .wine-link{
@@ -481,7 +488,11 @@
   }
 
   .article-content h2{
-    font-size: 17px;
+    font-size: 15px;
+  }
+
+  .article-content h3{
+    font-size: 13px;
   }
 
   .note-title{
@@ -504,4 +515,5 @@
   .note-button{
     font-size: 17px;
   }
+
 }
