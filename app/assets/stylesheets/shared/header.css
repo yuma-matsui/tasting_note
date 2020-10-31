@@ -301,7 +301,7 @@
   }
 }
 
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 600px){
 
   .header-top{
     height: 80px;
