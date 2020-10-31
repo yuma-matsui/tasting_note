@@ -1,5 +1,4 @@
 .main{
-  height: 100vh;
   width: 100%;
 }
 
@@ -174,14 +173,25 @@
   font-weight: bold;
 }
 
-.concept-headding{
-  height: 8vh;
+.concept-button{
   border: 1px solid black;
-  border-radius: 50px;
-  padding: 20px;
+  border-radius: 50%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.concept-button p{
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.concept-headding{
   text-align: center;
   font-weight: bold;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .concept-room{
@@ -216,8 +226,7 @@
 
 .main{
   width: 100%;
-  height: 160vh;
-  margin: 100px 30px 450px;
+  margin: 100px 30px 0;
 }
 
 .articles-space{
@@ -229,13 +238,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding-top: 100px;
-  padding-bottom: 80px;
+  padding: 70px 0 55px;
 }
 
 .article-title{
   font-size: 50px;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .article-button{
@@ -243,6 +252,7 @@
   font-weight: bold;
   padding-bottom: 3px;
   border-bottom: 3px solid black;
+  margin-top: 35px;
 }
 
 .article-button span{
@@ -251,9 +261,9 @@
 }
 
 .article-items{
+  height: 398px;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  height: 60%;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -358,4 +368,152 @@
 
 .article-time{
   display: flex;
+}
+
+@media only screen and (max-width: 1024px){
+  .tasting-concept{
+    height: 600px;
+  }
+
+  .concept-explanation-on{
+    font-size: 20px;
+  }
+
+  .concept-explanation-on span{
+    font-size: 30px;
+  }
+
+  .articles-space{
+    height: 550px;
+    padding: 30px 0 30px;
+  }
+
+  .article-content{
+    line-height: 48px;
+  }
+
+  .article-content h2{
+    font-size: 23px;
+  }
+
+  .article-content h3{
+    font-size: 20px;
+  }
+
+  .article-button .wine-link{
+    margin-top: 25px;
+  }
+
+  .notes-space{
+    height: 400px;
+  }
+
+  .note-item{
+    height: 70%;
+  }
+
+  .main{
+    margin:100px 30px 20px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+
+  .tasting-concept{
+    height: 450px;
+    margin: 50px 0;
+  }
+
+  .concept-image h1, .concept-image span{
+    margin: 0 auto;
+  }
+
+  .tasting-concept h1{
+    font-size: 40px;
+  }
+
+  .concept-explanation{
+    margin-right: 10px;
+    font-size: 19px;
+  }
+
+  .concept-text-second, .concept-text-third, .concept-text-fourth, .concept-explanation-second{
+    display: none;
+  }
+
+  .concept-image, .slide-image, .slide-image-second, .slide-image-third, .concept-image-on{
+    margin-right: 10px;
+  }
+
+  .concept-button h2, .concept-button p{
+    font-size: 10px;
+  }
+
+  .concept-button{
+    padding: 8px;
+  }
+
+  .concept-image-on{
+    padding: 5px;
+  }
+
+  .concept-image-on h1{
+    font-size: 21px;
+  }
+
+  .concept-explanation-on{
+    font-size: 10px;
+    margin: 20px 0;
+  }
+
+  .concept-image-on span{
+    font-size: 13px;
+  }
+
+  .article-title{
+    font-size: 30px;
+  }
+
+  .article-items{
+    height: 60%;
+    width: 80%;
+  }
+
+  .wine-link{
+    font-size: 20px;
+  }
+
+  .article-content{
+    line-height: 42px;
+  }
+
+  .article-content h2{
+    font-size: 15px;
+  }
+
+  .article-content h3{
+    font-size: 13px;
+  }
+
+  .note-title{
+    font-size: 30px;
+  }
+
+  .notes-space{
+    height: 350px;
+  }
+
+  .note-item{
+    height: 75%;
+    width: 65%;
+  }
+
+  .note-name{
+    font-size: 14px;
+  }
+
+  .note-button{
+    font-size: 17px;
+  }
+
 }

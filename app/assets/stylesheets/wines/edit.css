@@ -17,3 +17,40 @@
 .wine-edit-top{
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 375px){
+  .edit-submit{
+    font-size: 11px;
+    margin-top: 8px;
+    padding: 3px;
+  }
+
+  .wine-edit-top .wine-top-detail{
+    width: 50%;
+  }
+
+  .edit-preview{
+    width: 50%;
+  }
+
+  .edit-preview .form-image{
+    font-size: 10px;
+  }
+
+  .wine-top-detail .form-input{
+    font-size: 12px;
+  }
+
+  .wine-show-content>span{
+    font-size: 8px;
+  }
+
+  .form-select{
+    font-size: 9px;
+  }
+
+  .wine-show-content .form-comment{
+    height: 50px;
+  }
+
+}

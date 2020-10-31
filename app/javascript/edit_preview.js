@@ -16,7 +16,7 @@ if (document.URL.match( /edit/ )) {
       const imageElement = document.createElement('div');
       const blobImage = document.createElement('img');
       blobImage.setAttribute('src', blob);
-      blobImage.setAttribute('style', 'width: 400px; height: 300px;');
+      blobImage.setAttribute('style', 'width: 80%; height: 50%; margin-top: 10px;');
 
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
