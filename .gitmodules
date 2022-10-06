@@ -1,0 +1,7 @@
+[submodule "api"]
+  path = api
+  url = https://github.com/yuma-matsui/tasting_note_api
+
+[submodule "front"]
+  path = front
+  url = https://github.com/yuma-matsui/tasting_note_front
