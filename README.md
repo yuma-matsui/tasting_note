@@ -1,2 +1,3 @@
-# tasting_note_root
-Root repository of tasting note.
+# Tasting Note
+Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である、テイスティング試験対策用のテイスティング記録サービスです。
+テイスティング模擬試験を手軽に行うことができます。
