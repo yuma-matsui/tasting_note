@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  front:
+    build:
+      context: ./front
+      args:
+        - WORKDIR=$WORKDIR
+        - API_URL="http://localhost:API_PORT"
+    command: sh -c "npm start"
+    volumes:
+      - "./front:/app"
+    ports:
+      - "$FRONT_PORT:3000"
