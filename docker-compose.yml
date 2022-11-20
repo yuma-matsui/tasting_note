@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15.1-alpine
+    environment:
+      - TZ=UTC
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 3306:3306
+    volumes:
+      - "./api/tmp/db:/var/lib/postgresql/data"
+  
+  api:
+    build:
+      context: ./api
+      args:
+        - WORKDIR=$WORKDIR
+    environment:
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - API_DOMAIN="localhost:$FRONT_PORT"
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - "./api:/app"
+    ports:
+      - "$API_PORT:3000"
+    depends_on:
+      - db
+
+  front:
+    build:
+      context: ./front
+      args:
+        - WORKDIR=$WORKDIR
+        - API_URL="http://localhost:API_PORT"
+    command: sh -c "npm start"
+    volumes:
+      - "./front:/app"
+    ports:
+      - "$FRONT_PORT:3000"
+    depends_on:
+      - api
