@@ -36,7 +36,7 @@ services:
       args:
         - WORKDIR=$WORKDIR
         - API_URL="http://localhost:API_PORT"
-    command: sh -c "npm start"
+    command: /bin/sh -c "npm start"
     volumes:
       - "./front:/app"
     ports:
