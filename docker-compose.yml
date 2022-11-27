@@ -5,8 +5,8 @@ services:
     image: postgres:15.1-alpine
     environment:
       - TZ=UTC
-      - POSTGRES_USER=$POSTGRES_USER
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - 3306:3306
@@ -16,17 +16,11 @@ services:
   api:
     build:
       context: ./api
-      args:
-        - WORKDIR=$WORKDIR
-    environment:
-      - POSTGRES_USER=$POSTGRES_USER
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      - API_DOMAIN="localhost:$FRONT_PORT"
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - "./api:/app"
     ports:
-      - "$API_PORT:3000"
+      - "8000:3000"
     depends_on:
       - db
 
@@ -34,12 +28,11 @@ services:
     build:
       context: ./front
       args:
-        - WORKDIR=$WORKDIR
-        - API_URL="http://localhost:API_PORT"
+        - REACT_APP_API_URL="http://localhost:8000"
     command: /bin/sh -c "npm start"
     volumes:
       - "./front:/app"
     ports:
-      - "$FRONT_PORT:3000"
+      - "3001:3000"
     depends_on:
       - api
