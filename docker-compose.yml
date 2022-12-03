@@ -27,8 +27,6 @@ services:
   front:
     build:
       context: ./front
-      args:
-        - REACT_APP_API_URL="http://localhost:8000"
     command: /bin/sh -c "npm start"
     volumes:
       - "./front:/app"
