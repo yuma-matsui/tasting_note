@@ -32,7 +32,7 @@ resource "aws_route53_record" "tokyo_cert_dns_resolve" {
   zone_id         = data.aws_route53_zone.tasting_note.zone_id
 }
 
-resource "aws_acm_certificate_validation" "tokyo_cert_valid_" {
+resource "aws_acm_certificate_validation" "tokyo_cert_valid" {
   certificate_arn         = aws_acm_certificate.tokyo.arn
   validation_record_fqdns = [for record in aws_route53_record.tokyo_cert_dns_resolve : record.fqdn]
 }
