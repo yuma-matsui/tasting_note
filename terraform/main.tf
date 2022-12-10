@@ -32,3 +32,6 @@ variable "project" {
   type    = string
   default = "tasting-note"
 }
+variable "db_password" {
+  type = string
+}
