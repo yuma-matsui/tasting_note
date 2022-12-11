@@ -13,6 +13,7 @@ resource "aws_lb" "alb" {
     aws_subnet.public_1c.id
   ]
 }
+
 resource "aws_lb_listener" "https" {
   load_balancer_arn = aws_lb.alb.arn
   port              = 443
@@ -24,6 +25,7 @@ resource "aws_lb_listener" "https" {
     target_group_arn = aws_alb_target_group.ecs_target_group.arn
   }
 }
+
 resource "aws_lb_listener" "http_to_https" {
   load_balancer_arn = aws_lb.alb.arn
   port              = 80
@@ -39,6 +41,7 @@ resource "aws_lb_listener" "http_to_https" {
     }
   }
 }
+
 # --------------------------
 # Target Group
 # --------------------------

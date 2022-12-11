@@ -6,6 +6,7 @@ resource "aws_iam_policy" "ecs_task_execution" {
   description = "Allow ecs task execution and ssm get parameters."
   policy      = data.aws_iam_policy_document.ecs_task_policy.json
 }
+
 data "aws_iam_policy_document" "ecs_task_policy" {
   statement {
     effect = "Allow"

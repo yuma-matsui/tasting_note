@@ -53,6 +53,7 @@ resource "aws_cloudfront_distribution" "cf" {
     ssl_support_method       = "sni-only"
   }
 }
+
 resource "aws_cloudfront_origin_access_identity" "cf_s3_origin_access_identity" {
   comment = "s3 web hosting bucket access identity"
 }

@@ -10,6 +10,7 @@ resource "aws_security_group" "ecs_sg" {
     Name = "${var.project}-ecs-sg"
   }
 }
+
 resource "aws_security_group_rule" "ecs_in_http" {
   security_group_id = aws_security_group.ecs_sg.id
   type              = "ingress"
@@ -18,6 +19,7 @@ resource "aws_security_group_rule" "ecs_in_http" {
   to_port           = 80
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
 resource "aws_security_group_rule" "ecs_in_https" {
   security_group_id = aws_security_group.ecs_sg.id
   type              = "ingress"
@@ -26,6 +28,7 @@ resource "aws_security_group_rule" "ecs_in_https" {
   to_port           = 443
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
 resource "aws_security_group_rule" "ecs_in_tcp_3000" {
   security_group_id = aws_security_group.ecs_sg.id
   type              = "ingress"
@@ -34,6 +37,7 @@ resource "aws_security_group_rule" "ecs_in_tcp_3000" {
   to_port           = 3000
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
 resource "aws_security_group_rule" "ecs_out_anywhere" {
   security_group_id = aws_security_group.ecs_sg.id
   type              = "egress"
@@ -42,6 +46,7 @@ resource "aws_security_group_rule" "ecs_out_anywhere" {
   to_port           = 0
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
 # --------------------------
 # RDS Secrurity Group
 # --------------------------
@@ -54,6 +59,7 @@ resource "aws_security_group" "rds_sg" {
     Name = "${var.project}-rds-sg"
   }
 }
+
 resource "aws_security_group_rule" "rds_in_tcp_5432" {
   security_group_id        = aws_security_group.rds_sg.id
   type                     = "ingress"

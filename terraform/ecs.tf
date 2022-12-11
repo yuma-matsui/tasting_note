@@ -4,6 +4,7 @@
 resource "aws_ecs_cluster" "tasting_note" {
   name = "${var.project}-cluster"
 }
+
 # --------------------------
 # task difinition
 # --------------------------
@@ -19,6 +20,7 @@ resource "aws_ecs_task_definition" "rails_task" {
 
   container_definitions = data.template_file.container_definitions.rendered
 }
+
 # --------------------------
 # service
 # --------------------------

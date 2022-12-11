@@ -13,6 +13,7 @@ resource "aws_db_subnet_group" "postgres" {
     Name = "${var.project}-postgres-subnetgroup"
   }
 }
+
 # --------------------------
 # RDS instance
 # --------------------------
