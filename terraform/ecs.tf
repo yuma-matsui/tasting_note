@@ -38,7 +38,7 @@ resource "aws_ecs_service" "tasting-note" {
   desired_count                     = 2
   launch_type                       = "FARGATE"
   platform_version                  = "1.4.0"
-  health_check_grace_period_seconds = 60
+  health_check_grace_period_seconds = 3600
 
   network_configuration {
     assign_public_ip = true
