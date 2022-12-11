@@ -14,7 +14,6 @@ resource "aws_acm_certificate" "tokyo" {
     create_before_destroy = true
   }
 }
-
 resource "aws_route53_record" "tokyo_cert_dns_resolve" {
   for_each = {
     for dvo in aws_acm_certificate.tokyo.domain_validation_options : dvo.domain_name => {
@@ -36,7 +35,6 @@ resource "aws_acm_certificate_validation" "tokyo_cert_valid" {
   certificate_arn         = aws_acm_certificate.tokyo.arn
   validation_record_fqdns = [for record in aws_route53_record.tokyo_cert_dns_resolve : record.fqdn]
 }
-
 # --------------------------
 # Virginia
 # --------------------------
@@ -54,7 +52,6 @@ resource "aws_acm_certificate" "virginia" {
     create_before_destroy = true
   }
 }
-
 resource "aws_route53_record" "virginia_cert_dns_resolve" {
   for_each = {
     for dvo in aws_acm_certificate.virginia.domain_validation_options : dvo.domain_name => {
@@ -71,7 +68,6 @@ resource "aws_route53_record" "virginia_cert_dns_resolve" {
   type            = each.value.type
   zone_id         = data.aws_route53_zone.tasting_note.zone_id
 }
-
 resource "aws_acm_certificate_validation" "cert_valid" {
   provider                = aws.virginia
   certificate_arn         = aws_acm_certificate.virginia.arn

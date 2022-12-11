@@ -4,14 +4,12 @@
 resource "aws_s3_bucket" "web_hosting" {
   bucket = var.project
 }
-
 resource "aws_s3_bucket_website_configuration" "tasting_note" {
   bucket = aws_s3_bucket.web_hosting.bucket
   index_document {
     suffix = "index.html"
   }
 }
-
 resource "aws_s3_bucket_public_access_block" "web_hosting" {
   bucket                  = aws_s3_bucket.web_hosting.id
   block_public_acls       = true
@@ -22,12 +20,10 @@ resource "aws_s3_bucket_public_access_block" "web_hosting" {
     aws_s3_bucket_policy.web_hosting
   ]
 }
-
 resource "aws_s3_bucket_policy" "web_hosting" {
   bucket = aws_s3_bucket.web_hosting.id
   policy = data.aws_iam_policy_document.s3_web_hosting.json
 }
-
 data "aws_iam_policy_document" "s3_web_hosting" {
   statement {
     sid       = "AllowCloudFrontServicePrincipal"

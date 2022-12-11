@@ -53,11 +53,9 @@ resource "aws_cloudfront_distribution" "cf" {
     ssl_support_method       = "sni-only"
   }
 }
-
 resource "aws_cloudfront_origin_access_identity" "cf_s3_origin_access_identity" {
   comment = "s3 web hosting bucket access identity"
 }
-
 resource "aws_route53_record" "cloudfront" {
   zone_id = data.aws_route53_zone.tasting_note.zone_id
   name    = "${var.project}.com"
