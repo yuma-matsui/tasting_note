@@ -29,13 +29,13 @@ resource "aws_security_group_rule" "alb_in_https" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 
-resource "aws_security_group_rule" "alb_out_tcp_3000" {
-  security_group_id        = aws_security_group.alb_sg.id
-  type                     = "egress"
-  protocol                 = "tcp"
-  from_port                = 3000
-  to_port                  = 3000
-  source_security_group_id = aws_security_group.ecs_sg.id
+resource "aws_security_group_rule" "alb_out_anywhere" {
+  security_group_id = aws_security_group.alb_sg.id
+  type              = "egress"
+  protocol          = "-1"
+  from_port         = 0
+  to_port           = 0
+  cidr_blocks       = ["0.0.0.0/0"]
 }
 
 # --------------------------
