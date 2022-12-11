@@ -55,4 +55,10 @@ resource "aws_ecs_service" "tasting-note" {
     container_name   = "${var.project}-container"
     container_port   = 3000
   }
+
+  lifecycle {
+    ignore_changes = [
+      task_definition
+    ]
+  }
 }
