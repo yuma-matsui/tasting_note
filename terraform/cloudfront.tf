@@ -56,14 +56,3 @@ resource "aws_cloudfront_distribution" "cf" {
 resource "aws_cloudfront_origin_access_identity" "cf_s3_origin_access_identity" {
   comment = "s3 web hosting bucket access identity"
 }
-resource "aws_route53_record" "cloudfront" {
-  zone_id = data.aws_route53_zone.tasting_note.zone_id
-  name    = "${var.project}.com"
-  type    = "A"
-
-  alias {
-    name                   = aws_cloudfront_distribution.cf.domain_name
-    zone_id                = aws_cloudfront_distribution.cf.hosted_zone_id
-    evaluate_target_health = true
-  }
-}

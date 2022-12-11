@@ -53,17 +53,3 @@ resource "aws_alb_target_group" "ecs_target_group" {
     Name = "${var.project}-ecs-tg"
   }
 }
-# --------------------------
-# Route53 A Record
-# --------------------------
-resource "aws_route53_record" "alb" {
-  zone_id = data.aws_route53_zone.tasting_note.zone_id
-  name    = "api.${var.project}.com"
-  type    = "A"
-
-  alias {
-    name                   = aws_lb.alb.dns_name
-    zone_id                = aws_lb.alb.zone_id
-    evaluate_target_health = true
-  }
-}
