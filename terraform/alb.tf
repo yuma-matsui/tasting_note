@@ -51,6 +51,13 @@ resource "aws_alb_target_group" "ecs_target_group" {
   protocol    = "HTTP"
   vpc_id      = aws_vpc.vpc.id
   target_type = "ip"
+  health_check {
+    healthy_threshold   = 5
+    path                = "/api/v1/hello"
+    unhealthy_threshold = 2
+    protocol            = "HTTP"
+    port                = 3000
+  }
 
   tags = {
     Name = "${var.project}-ecs-tg"
