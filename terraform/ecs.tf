@@ -40,11 +40,7 @@ resource "aws_ecs_service" "tasting-note" {
   network_configuration {
     assign_public_ip = true
     security_groups  = [aws_security_group.ecs_sg.id]
-
-    subnets = [
-      aws_subnet.public_1a.id,
-      aws_subnet.public_1c.id
-    ]
+    subnets          = [for subnet in aws_subnet.public : subnet.id]
   }
 
   load_balancer {

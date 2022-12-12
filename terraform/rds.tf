@@ -3,11 +3,8 @@
 # --------------------------
 resource "aws_db_subnet_group" "postgres" {
   name = "${var.project}-postgres-subnetgroup"
-  subnet_ids = [
-    aws_subnet.private_1a.id,
-    aws_subnet.private_1c.id,
-    aws_subnet.private_1d.id
-  ]
+
+  subnet_ids = [for subnet in aws_subnet.db_private : subnet.id]
 
   tags = {
     Name = "${var.project}-postgres-subnetgroup"

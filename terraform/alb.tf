@@ -8,10 +8,7 @@ resource "aws_lb" "alb" {
   security_groups = [
     aws_security_group.alb_sg.id
   ]
-  subnets = [
-    aws_subnet.public_1a.id,
-    aws_subnet.public_1c.id
-  ]
+  subnets = [for subnet in aws_subnet.public : subnet.id]
 }
 
 resource "aws_lb_listener" "https" {

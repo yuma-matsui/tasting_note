@@ -16,55 +16,35 @@ resource "aws_vpc" "vpc" {
 # --------------------------
 # Subnet
 # --------------------------
-resource "aws_subnet" "public_1a" {
+resource "aws_subnet" "public" {
+  for_each = {
+    "1a" = "172.20.10.0/24"
+    "1c" = "172.20.11.0/24"
+  }
+
   vpc_id                  = aws_vpc.vpc.id
-  availability_zone       = "ap-northeast-1a"
-  cidr_block              = "172.20.0.0/24"
+  availability_zone       = "ap-northeast-${each.key}"
+  cidr_block              = each.value
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.project}-public-1a"
+    Name = "${var.project}-alb-public-${each.key}"
   }
 }
 
-resource "aws_subnet" "public_1c" {
-  vpc_id                  = aws_vpc.vpc.id
-  availability_zone       = "ap-northeast-1c"
-  cidr_block              = "172.20.1.0/24"
-  map_public_ip_on_launch = true
-
-  tags = {
-    Name = "${var.project}-public-1c"
+resource "aws_subnet" "db_private" {
+  for_each = {
+    "1a" = "172.20.0.0/24"
+    "1c" = "172.20.1.0/24"
+    "1d" = "172.20.2.0/24"
   }
-}
 
-resource "aws_subnet" "private_1a" {
   vpc_id            = aws_vpc.vpc.id
-  availability_zone = "ap-northeast-1a"
-  cidr_block        = "172.20.3.0/24"
+  availability_zone = "ap-northeast-${each.key}"
+  cidr_block        = each.value
 
   tags = {
-    Name = "${var.project}-private-1a"
-  }
-}
-
-resource "aws_subnet" "private_1c" {
-  vpc_id            = aws_vpc.vpc.id
-  availability_zone = "ap-northeast-1c"
-  cidr_block        = "172.20.4.0/24"
-
-  tags = {
-    Name = "${var.project}-private-1c"
-  }
-}
-
-resource "aws_subnet" "private_1d" {
-  vpc_id            = aws_vpc.vpc.id
-  availability_zone = "ap-northeast-1d"
-  cidr_block        = "172.20.5.0/24"
-
-  tags = {
-    Name = "${var.project}-private-1d"
+    Name = "${var.project}-db-private-${each.key}"
   }
 }
 
@@ -87,29 +67,16 @@ resource "aws_route_table" "private_rt" {
   }
 }
 
-resource "aws_route_table_association" "public_rt_1a" {
+resource "aws_route_table_association" "public" {
+  for_each       = aws_subnet.public
   route_table_id = aws_route_table.public_rt.id
-  subnet_id      = aws_subnet.public_1a.id
+  subnet_id      = each.value.id
 }
 
-resource "aws_route_table_association" "public_rt_1c" {
-  route_table_id = aws_route_table.public_rt.id
-  subnet_id      = aws_subnet.public_1c.id
-}
-
-resource "aws_route_table_association" "private_rt_1a" {
+resource "aws_route_table_association" "db_private" {
+  for_each       = aws_subnet.db_private
   route_table_id = aws_route_table.private_rt.id
-  subnet_id      = aws_subnet.private_1a.id
-}
-
-resource "aws_route_table_association" "private_rt_1c" {
-  route_table_id = aws_route_table.private_rt.id
-  subnet_id      = aws_subnet.private_1c.id
-}
-
-resource "aws_route_table_association" "private_rt_1d" {
-  route_table_id = aws_route_table.private_rt.id
-  subnet_id      = aws_subnet.private_1d.id
+  subnet_id      = each.value.id
 }
 
 # --------------------------
