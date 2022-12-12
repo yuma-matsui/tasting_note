@@ -18,7 +18,11 @@ resource "aws_ecs_task_definition" "rails_task" {
   execution_role_arn = aws_iam_role.ecs_task_execution.arn
   task_role_arn      = aws_iam_role.ecs_task_execution.arn
 
-  container_definitions = data.template_file.container_definitions.rendered
+  container_definitions = templatefile("./task_definitions/rails_container_definitions.json", {
+    project               = var.project
+    image                 = aws_ecr_repository.tasting_note.repository_url
+    aws_ssm_parameter_arn = data.aws_ssm_parameter.rails_master_key.arn
+  })
 }
 
 # --------------------------
