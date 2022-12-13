@@ -16,7 +16,6 @@ resource "aws_ecs_task_definition" "rails_task" {
   requires_compatibilities = ["FARGATE"]
 
   execution_role_arn = aws_iam_role.ecs_task_execution.arn
-  task_role_arn      = aws_iam_role.ecs_task_execution.arn
 
   container_definitions = templatefile("./task_definitions/rails_container_definitions.json", {
     project               = var.project
@@ -35,12 +34,12 @@ resource "aws_ecs_service" "tasting-note" {
   desired_count                     = 2
   launch_type                       = "FARGATE"
   platform_version                  = "1.4.0"
-  health_check_grace_period_seconds = 3600
+  health_check_grace_period_seconds = 60
 
   network_configuration {
-    assign_public_ip = true
+    assign_public_ip = false
     security_groups  = [aws_security_group.ecs_sg.id]
-    subnets          = [for subnet in aws_subnet.public : subnet.id]
+    subnets          = [for subnet in aws_subnet.ecs_private : subnet.id]
   }
 
   load_balancer {
