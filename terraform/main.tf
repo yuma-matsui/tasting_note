@@ -36,3 +36,8 @@ variable "project" {
 variable "db_password" {
   type = string
 }
+
+variable "availability_zone" {
+  type    = list(string)
+  default = ["1a", "1c"]
+}
