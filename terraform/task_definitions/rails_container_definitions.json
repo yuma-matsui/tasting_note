@@ -1,0 +1,27 @@
+[
+  {
+    "name": "${project}-container",
+    "image": "${image}:latest",
+    "essential": true,
+    "secrets": [
+      {
+        "name": "RAILS_MASTER_KEY",
+        "valueFrom": "${aws_ssm_parameter_arn}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "ecs",
+        "awslogs-group": "/ecs/${project}-task"
+      }
+    },
+    "portMappings": [
+      {
+        "protocol": "tcp",
+        "containerPort": 3000
+      }
+    ]
+  }
+]
