@@ -129,24 +129,24 @@ resource "aws_route" "public_rt_igw_route" {
 # --------------------------
 # NAT Gateway
 # --------------------------
-resource "aws_nat_gateway" "for_ecs" {
-  for_each = toset(var.availability_zone)
+# resource "aws_nat_gateway" "for_ecs" {
+#   for_each = toset(var.availability_zone)
 
-  allocation_id = aws_eip.nat_gateway[each.key].id
-  subnet_id     = aws_subnet.public[each.key].id
+#   allocation_id = aws_eip.nat_gateway[each.key].id
+#   subnet_id     = aws_subnet.public[each.key].id
 
-  tags = {
-    Name = "${var.project}-nat-gateway-${each.key}"
-  }
+#   tags = {
+#     Name = "${var.project}-nat-gateway-${each.key}"
+#   }
 
-  depends_on = [
-    aws_internet_gateway.igw
-  ]
-}
+#   depends_on = [
+#     aws_internet_gateway.igw
+#   ]
+# }
 
-resource "aws_route" "private_rt_nat_gateway_route" {
-  for_each               = toset(var.availability_zone)
-  route_table_id         = aws_route_table.private_ecs_rt[each.key].id
-  destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id         = aws_nat_gateway.for_ecs[each.key].id
-}
+# resource "aws_route" "private_rt_nat_gateway_route" {
+#   for_each               = toset(var.availability_zone)
+#   route_table_id         = aws_route_table.private_ecs_rt[each.key].id
+#   destination_cidr_block = "0.0.0.0/0"
+#   nat_gateway_id         = aws_nat_gateway.for_ecs[each.key].id
+# }
