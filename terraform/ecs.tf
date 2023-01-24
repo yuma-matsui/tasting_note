@@ -25,10 +25,10 @@ resource "aws_ecs_task_definition" "rails_task" {
 }
 
 # --------------------------
-# service
+# service v2
 # --------------------------
-resource "aws_ecs_service" "tasting-note" {
-  name                              = "${var.project}-service"
+resource "aws_ecs_service" "tasting_note_v2" {
+  name                              = "${var.project}-service-v2"
   cluster                           = aws_ecs_cluster.tasting_note.arn
   task_definition                   = aws_ecs_task_definition.rails_task.arn
   desired_count                     = 2
@@ -37,13 +37,13 @@ resource "aws_ecs_service" "tasting-note" {
   health_check_grace_period_seconds = 60
 
   network_configuration {
-    assign_public_ip = false
+    assign_public_ip = true
     security_groups  = [aws_security_group.ecs_sg.id]
-    subnets          = [for subnet in aws_subnet.ecs_private : subnet.id]
+    subnets          = [for subnet in aws_subnet.public : subnet.id]
   }
 
   load_balancer {
-    target_group_arn = aws_alb_target_group.ecs_target_group.arn
+    target_group_arn = aws_alb_target_group.ecs_target_group_v2.arn
     container_name   = "${var.project}-container"
     container_port   = 3000
   }
