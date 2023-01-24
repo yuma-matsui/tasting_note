@@ -19,7 +19,7 @@ resource "aws_lb_listener" "https" {
   certificate_arn   = aws_acm_certificate.tokyo.arn
   default_action {
     type             = "forward"
-    target_group_arn = aws_alb_target_group.ecs_target_group.arn
+    target_group_arn = aws_alb_target_group.ecs_target_group_v2.arn
   }
 }
 
@@ -40,10 +40,10 @@ resource "aws_lb_listener" "http_to_https" {
 }
 
 # --------------------------
-# Target Group
+# Target Group v2
 # --------------------------
-resource "aws_alb_target_group" "ecs_target_group" {
-  name        = "${var.project}-ecs-tg"
+resource "aws_alb_target_group" "ecs_target_group_v2" {
+  name        = "${var.project}-ecs-tg-v2"
   port        = 3000
   protocol    = "HTTP"
   vpc_id      = aws_vpc.vpc.id
@@ -57,6 +57,6 @@ resource "aws_alb_target_group" "ecs_target_group" {
   }
 
   tags = {
-    Name = "${var.project}-ecs-tg"
+    Name = "${var.project}-ecs-tg-v2"
   }
 }
