@@ -23,3 +23,24 @@ data "aws_iam_policy_document" "ecs_task_policy" {
     resources = ["*"]
   }
 }
+
+# -------------------
+# ecr full access
+# -------------------
+data "aws_iam_policy" "ecr_full_access" {
+  arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"
+}
+
+# -------------------
+# ecs full access
+# -------------------
+data "aws_iam_policy" "ecs_full_access" {
+  arn = "arn:aws:iam::aws:policy/AmazonECS_FullAccess"
+}
+
+# -----------------------
+# cloud front full access
+# -----------------------
+data "aws_iam_policy" "cf_full_access" {
+  arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+}
