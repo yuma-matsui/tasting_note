@@ -40,7 +40,7 @@ data "aws_iam_policy_document" "s3_web_hosting" {
     }
   }
   statement {
-    sid    = "AllowCircleciAutoDeploy"
+    sid    = "AllowGithubActionsAutoDeploy"
     effect = "Allow"
     actions = [
       "s3:PutObject",
@@ -53,7 +53,7 @@ data "aws_iam_policy_document" "s3_web_hosting" {
     ]
     principals {
       type        = "AWS"
-      identifiers = [data.aws_iam_user.circleci.arn]
+      identifiers = [aws_iam_user.github_actions.arn]
     }
   }
 }
