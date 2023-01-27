@@ -1,11 +1,4 @@
 # --------------------------
-# for CI/CD
-# --------------------------
-data "aws_iam_user" "circleci" {
-  user_name = "circleci-user"
-}
-
-# --------------------------
 # for CI/CD Github Actions
 # --------------------------
 resource "aws_iam_user" "github_actions" {

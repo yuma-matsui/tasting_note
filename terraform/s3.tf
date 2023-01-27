@@ -40,23 +40,6 @@ data "aws_iam_policy_document" "s3_web_hosting" {
     }
   }
   statement {
-    sid    = "AllowCircleciAutoDeploy"
-    effect = "Allow"
-    actions = [
-      "s3:PutObject",
-      "s3:ListBucket",
-      "s3:DeleteObject"
-    ]
-    resources = [
-      "${aws_s3_bucket.web_hosting.arn}",
-      "${aws_s3_bucket.web_hosting.arn}/*"
-    ]
-    principals {
-      type        = "AWS"
-      identifiers = [data.aws_iam_user.circleci.arn]
-    }
-  }
-  statement {
     sid    = "AllowGithubActionsAutoDeploy"
     effect = "Allow"
     actions = [
