@@ -50,7 +50,7 @@ resource "aws_alb_target_group" "ecs_target_group_v2" {
   target_type = "ip"
   health_check {
     healthy_threshold   = 5
-    path                = "/api/v1/tasting_sheets"
+    path                = "/api/v1/health_check"
     unhealthy_threshold = 2
     protocol            = "HTTP"
     port                = 3000
