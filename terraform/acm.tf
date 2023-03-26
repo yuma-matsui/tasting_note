@@ -43,8 +43,9 @@ resource "aws_acm_certificate_validation" "tokyo_cert_valid" {
 resource "aws_acm_certificate" "virginia" {
   provider = aws.virginia
 
-  domain_name       = "${var.project}.com"
-  validation_method = "DNS"
+  domain_name               = "${var.project}.com"
+  subject_alternative_names = ["images.${var.project}.com"]
+  validation_method         = "DNS"
 
   tags = {
     Name = "${var.project}-sslcert-virginia"
