@@ -44,3 +44,10 @@ data "aws_iam_policy" "ecs_full_access" {
 data "aws_iam_policy" "cf_full_access" {
   arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
 }
+
+# -----------------------
+# S3 full access
+# -----------------------
+data "aws_iam_policy" "s3_full_access" {
+  arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
