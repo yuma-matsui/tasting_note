@@ -65,6 +65,17 @@ resource "aws_s3_bucket" "images" {
   bucket = "${var.project}-images"
 }
 
+resource "aws_s3_bucket_cors_configuration" "tasting_note" {
+  bucket = aws_s3_bucket.images.id
+
+  cors_rule {
+    allowed_methods = ["PUT"]
+    allowed_origins = [
+      "http://localhost:3001",
+      "https://${var.project}.com"
+    ]
+  }
+}
 resource "aws_s3_bucket_public_access_block" "images" {
   bucket                  = aws_s3_bucket.images.id
   block_public_acls       = true
