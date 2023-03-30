@@ -16,6 +16,7 @@ resource "aws_ecs_task_definition" "rails_task" {
   requires_compatibilities = ["FARGATE"]
 
   execution_role_arn = aws_iam_role.ecs_task_execution.arn
+  task_role_arn      = aws_iam_role.ecs_task.arn
 
   container_definitions = templatefile("./task_definitions/rails_container_definitions.json", {
     project               = var.project
