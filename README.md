@@ -22,10 +22,12 @@ Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である�
 <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/c463ea66-8cd9-4193-bfe5-228f99c6058c.png" width="600px">
 <br>
 
+
 2. シート名、テイスティングを行う時間、テイスティングをするワインの色を入力
 
 <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/522402d6-d674-44dd-981e-70bdc2dd3dc0.png" width="600px">
 <br>
+
 
 3. 外観、香り、味わい、まとめの4つの項目について回答を行う
 
