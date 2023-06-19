@@ -1,8 +1,6 @@
 # Tasting Note
 
-<p align="center">
-  <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/c56284ae-9735-4ee8-8f56-21ce9c097ec7.png" width="600px">
-</p>
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/c56284ae-9735-4ee8-8f56-21ce9c097ec7.png" width="600px">
 
 ## URL
 * https://tasting-note.com/
@@ -21,7 +19,7 @@ Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である�
 
 1. トップページ下部の「登録しないではじめる」から記録の開始
 
-![image](https://github.com/yuma-matsui/tasting_note/assets/70259961/c463ea66-8cd9-4193-bfe5-228f99c6058c)
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/c463ea66-8cd9-4193-bfe5-228f99c6058c.png" width="600px">
 
 2. シート名、テイスティングを行う時間、テイスティングをするワインの色を入力
 
