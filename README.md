@@ -55,7 +55,7 @@ $ git submodule update
 ```
 
 ### API
-`credentials.yml.enc`のデコードに`master.key`が必要なため@yuma-matusiまでご連絡ください。
+`credentials.yml.enc`のデコードに`master.key`が必要なため`@yuma-matusi`までご連絡ください。
 
 ```shell
 $ docker-compose run --rm api /bin/sh -c "bin/setup"
