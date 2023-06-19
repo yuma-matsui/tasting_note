@@ -28,7 +28,7 @@ Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である�
 ![image](https://github.com/yuma-matsui/tasting_note/assets/70259961/109c79e8-27ac-44b6-909d-1915958a4420)
 ![image](https://github.com/yuma-matsui/tasting_note/assets/70259961/e2497a42-9595-4dea-81ad-2d4fade4d861)
 
-### 登録をしていたける場合
+### 登録をした場合
 - テイスティング記録の保存ができます
 - 記録したテイスティングに対するワインの登録が行えます
 
@@ -55,7 +55,7 @@ $ git submodule update
 ```
 
 ### API
-`credentials.yml.enc`のデコードに`master.key`が必要なため@yuma-matusまでご連絡ください。
+`credentials.yml.enc`のデコードに`master.key`が必要なため@yuma-matusiまでご連絡ください。
 
 ```shell
 $ docker-compose run --rm api /bin/sh -c "bin/setup"
