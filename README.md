@@ -1,5 +1,5 @@
 # Tasting Note
-![image](https://github.com/yuma-matsui/tasting_note/assets/70259961/8bb11b1f-8175-4a4a-a884-11b8400664ac)
+![image](https://github.com/yuma-matsui/tasting_note/assets/70259961/c56284ae-9735-4ee8-8f56-21ce9c097ec7)
 
 ## URL
 * https://tasting-note.com/
