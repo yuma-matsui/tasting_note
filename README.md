@@ -25,27 +25,20 @@ Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である�
 2. シート名、テイスティングを行う時間、テイスティングをするワインの色を入力
 
 <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/522402d6-d674-44dd-981e-70bdc2dd3dc0.png" width="600px">
+<br />
 
 3. 外観、香り、味わい、まとめの4つの項目について回答を行う
 
-<p align="center">
-  <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/ae835281-2fde-4d71-bda9-4413b137ad8b.png" width="600px">
-</p>
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/ae835281-2fde-4d71-bda9-4413b137ad8b.png" width="600px">
 <br />
 
-<p align="center">
-  <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/4250b440-f310-4800-9ebc-488a7049b4b2.png" width="600px">
-</p>
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/4250b440-f310-4800-9ebc-488a7049b4b2.png" width="600px">
 <br />
 
-<p align="center">
-  <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/109c79e8-27ac-44b6-909d-1915958a4420.png" width="600px">
-</p>
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/109c79e8-27ac-44b6-909d-1915958a4420.png" width="600px">
 <br />
 
-<p align="center">
-  <img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/e2497a42-9595-4dea-81ad-2d4fade4d861.png" width="600px">
-</p>
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/e2497a42-9595-4dea-81ad-2d4fade4d861.png" width="600px">
 <br />
 
 ### 登録をした場合
