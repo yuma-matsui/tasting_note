@@ -61,6 +61,8 @@ Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である�
 * TypeScript 4.9.3
 * React 18.2.0
 
+## インフラ構成
+
 ## セットアップ
 ```shell
 $ git clone https://github.com/yuma-matsui/tasting_note.git
