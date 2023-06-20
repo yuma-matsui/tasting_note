@@ -63,6 +63,10 @@ Tasting NoteはJ.S.Aソムリエ呼称資格認定試験の2次試験である�
 
 ## インフラ構成
 
+<img src="https://github.com/yuma-matsui/tasting_note/assets/70259961/af26ced3-b1a9-492a-8206-bf5ae2907716.png" width="600px">
+<br>
+
+
 ## セットアップ
 ```shell
 $ git clone https://github.com/yuma-matsui/tasting_note.git
