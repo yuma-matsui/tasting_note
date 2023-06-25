@@ -117,8 +117,11 @@ $ docker-compose run --rm api /bin/sh -c "bundle exec rubocop"
 ```
 
 ### Frontend
-
 ```shell
 $ docker-compose run --rm front /bin/sh -c "npm run lint"
 $ docker-compose run --rm front /bin/sh -c "npm run test"
+
+# E2E
+$ docker-compose up front
+$ docker-compose run --rm front /bin/sh -c "npm run cy:run"
 ```
