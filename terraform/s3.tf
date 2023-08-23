@@ -61,46 +61,46 @@ data "aws_iam_policy_document" "s3_web_hosting" {
 # --------------------------
 # S3 for Images
 # --------------------------
-resource "aws_s3_bucket" "images" {
-  bucket = "${var.project}-images"
-}
+# resource "aws_s3_bucket" "images" {
+#   bucket = "${var.project}-images"
+# }
 
-resource "aws_s3_bucket_cors_configuration" "tasting_note" {
-  bucket = aws_s3_bucket.images.id
+# resource "aws_s3_bucket_cors_configuration" "tasting_note" {
+#   bucket = aws_s3_bucket.images.id
 
-  cors_rule {
-    allowed_methods = ["PUT"]
-    allowed_origins = [
-      "http://localhost:3001",
-      "https://${var.project}.com"
-    ]
-  }
-}
-resource "aws_s3_bucket_public_access_block" "images" {
-  bucket                  = aws_s3_bucket.images.id
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-  depends_on = [
-    aws_s3_bucket_policy.images
-  ]
-}
+#   cors_rule {
+#     allowed_methods = ["PUT"]
+#     allowed_origins = [
+#       "http://localhost:3001",
+#       "https://${var.project}.com"
+#     ]
+#   }
+# }
+# resource "aws_s3_bucket_public_access_block" "images" {
+#   bucket                  = aws_s3_bucket.images.id
+#   block_public_acls       = true
+#   block_public_policy     = true
+#   ignore_public_acls      = true
+#   restrict_public_buckets = true
+#   depends_on = [
+#     aws_s3_bucket_policy.images
+#   ]
+# }
 
-resource "aws_s3_bucket_policy" "images" {
-  bucket = aws_s3_bucket.images.id
-  policy = data.aws_iam_policy_document.s3_images.json
-}
+# resource "aws_s3_bucket_policy" "images" {
+#   bucket = aws_s3_bucket.images.id
+#   policy = data.aws_iam_policy_document.s3_images.json
+# }
 
-data "aws_iam_policy_document" "s3_images" {
-  statement {
-    sid       = "AllowCloudFrontServicePrincipal"
-    effect    = "Allow"
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.images.arn}/*"]
-    principals {
-      type        = "AWS"
-      identifiers = [aws_cloudfront_origin_access_identity.cf_s3_images_origin_access_identity.iam_arn]
-    }
-  }
-}
+# data "aws_iam_policy_document" "s3_images" {
+#   statement {
+#     sid       = "AllowCloudFrontServicePrincipal"
+#     effect    = "Allow"
+#     actions   = ["s3:GetObject"]
+#     resources = ["${aws_s3_bucket.images.arn}/*"]
+#     principals {
+#       type        = "AWS"
+#       identifiers = [aws_cloudfront_origin_access_identity.cf_s3_images_origin_access_identity.iam_arn]
+#     }
+#   }
+# }
